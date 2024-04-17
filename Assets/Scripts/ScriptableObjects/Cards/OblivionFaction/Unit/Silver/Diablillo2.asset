@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Diablillo2
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 1c1e3f1e9657284428be4c32da5abe04, type: 3}
+  Tittle: Diablillo
   Effect_description: 
   Faction: 1
+  Efect: 0
   Power: 0
   AType: 0
   LType: 0

@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Archer1
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 8332d72f3b9c77c45a8e8bdce9f9cc40, type: 3}
+  Tittle: Arquero
   Effect_description: 
   Faction: 0
+  Efect: 0
   Power: 0
   AType: 1
   LType: 0

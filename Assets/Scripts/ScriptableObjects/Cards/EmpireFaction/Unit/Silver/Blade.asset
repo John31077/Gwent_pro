@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Blade
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: bf98869ee6361e34faa4d2f14dd3cb08, type: 3}
+  Tittle: Cuchilla
   Effect_description: 
   Faction: 0
+  Efect: 0
   Power: 0
   AType: 0
   LType: 0

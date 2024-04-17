@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: MolagBal
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 42a9909ff53cced4d8f6e18b378c73fe, type: 3}
+  Tittle: Molag Bal
   Effect_description: 
   Faction: 1
+  Efect: 0

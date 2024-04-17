@@ -5,9 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Leader Card", menuName = "Leader Card")]
 public class LeaderCard : Card
 {
-    public override void Efect()
-    {
-        base.Efect();
-    }
+    
 }
      

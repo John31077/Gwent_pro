@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Ayrenn
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 9184258df9d91e84496e17e9904103d8, type: 3}
+  Tittle: Reina Ayrenn
   Effect_description: 
   Faction: 0
+  Efect: 0
   Power: 0
   AType: 0
   LType: 1

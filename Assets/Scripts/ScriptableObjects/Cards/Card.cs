@@ -5,12 +5,13 @@ using UnityEngine;
 
 public abstract class Card : ScriptableObject 
 {
-    [SerializeField]private Sprite Image;
-    [SerializeField]private string Effect_description;
+    [SerializeField]public Sprite Image;
+    [SerializeField]public string Tittle;
+    [SerializeField]public string Effect_description;
     [SerializeField]public eFaction Faction;
+    [SerializeField]public eEfect Efect;
 
-    public virtual void Efect()
-    {}
+    
 }
 
 public enum eFaction
@@ -18,4 +19,18 @@ public enum eFaction
     Empire, 
     Oblivion, 
     Neutral
+}
+
+public enum eEfect
+{
+    None, //No efecto
+    Buff, //Aumento en fila
+    Wheather, //Clima
+    Burn,  //Quemadura
+    little_Burn, //Quemadura menor
+    Steal, //Robar carta
+    Companion, // multiplicar por n el ataque de las cartas con el mismo nombre (siendo n la cantidad de cartas)
+    Clear, //Limpia la fila con menos unidades
+    Average //Promedio
+
 }

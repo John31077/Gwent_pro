@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Legacy2
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 88b54b9e1914792408aabfff79538249, type: 3}
+  Tittle: Legado2
   Effect_description: 
   Faction: 0
+  Efect: 0
   Power: 0
   AType: 0
   LType: 0

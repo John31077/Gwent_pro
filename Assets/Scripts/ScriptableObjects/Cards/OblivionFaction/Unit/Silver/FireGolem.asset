@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: FireGolem
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 258f04d27936f2b4fbeef1eeabb5f713, type: 3}
+  Tittle: Golem de Fuego
   Effect_description: 
   Faction: 1
+  Efect: 0
   Power: 0
   AType: 0
   LType: 0

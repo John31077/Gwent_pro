@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Mede
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 119a4b8364942d44cbf960e346e7cc9f, type: 3}
+  Tittle: Tito Mede II
   Effect_description: 
   Faction: 0
+  Efect: 0

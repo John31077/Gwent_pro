@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Zombie1
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 5512474ebf96f254a9ff7759e135ace9, type: 3}
+  Tittle: Zombi
   Effect_description: 
   Faction: 1
+  Efect: 0
   Power: 0
   AType: 0
   LType: 0

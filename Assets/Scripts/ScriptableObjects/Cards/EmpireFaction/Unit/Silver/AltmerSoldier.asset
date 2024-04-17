@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: AltmerSoldier
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: ea9930286b9e14b429701d2765d37495, type: 3}
+  Tittle: Soldado Altmer
   Effect_description: 
   Faction: 0
+  Efect: 0
   Power: 0
   AType: 0
   LType: 0

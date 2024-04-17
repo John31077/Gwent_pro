@@ -31,6 +31,8 @@ public class Begin : MonoBehaviour
     public Sprite Emeric;
     public Sprite Talos;
     public Sprite Mede;
+    public Sprite OblivionBack;
+    public Sprite EmpireBack;
     public Sprite EmpireBoard;
     public Sprite OblivionBoard;
     public Sprite RusticBoard;
@@ -48,21 +50,30 @@ public class Begin : MonoBehaviour
     {
         destinationP1.DeckSO.Clear();
         destinationP1.DeckSO.AddRange(Deck_Oblivion);
+        SpriteRenderer spriteRenderer = destinationP1.GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = OblivionBack;
+        
     }
     public void AplyDeckEmpireP1()
     {
         destinationP1.DeckSO.Clear();
         destinationP1.DeckSO.AddRange(Deck_Empire);
+        SpriteRenderer spriteRenderer = destinationP1.GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = EmpireBack;
     }
     public void AplyDeckOblivionP2()
     {
         destinationP2.DeckSO.Clear();
         destinationP2.DeckSO.AddRange(Deck_Oblivion);
+        SpriteRenderer spriteRenderer = destinationP2.GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = OblivionBack;
     }
     public void AplyDeckEmpireP2()
     {
         destinationP2.DeckSO.Clear();
         destinationP2.DeckSO.AddRange(Deck_Empire);
+        SpriteRenderer spriteRenderer = destinationP2.GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = EmpireBack;
     }
     public void Continue1()
     {
@@ -117,33 +128,92 @@ public class Begin : MonoBehaviour
     }
     public void P1_ChooseLeader1()
     {
-        if (P1_Leader1.image.sprite == Emeric) P1_LeaderCard.leader = emeric_LC;
-        else P1_LeaderCard.leader = bal_LC;
+        if (P1_Leader1.image.sprite == Emeric) 
+        {
+            P1_LeaderCard.leader = emeric_LC;
+            SpriteRenderer spriteRenderer = P1_LeaderCard.GetComponent<SpriteRenderer>();
+            spriteRenderer.sprite = Emeric;
+        }
+        else 
+        {
+            P1_LeaderCard.leader = bal_LC;
+            SpriteRenderer spriteRenderer = P1_LeaderCard.GetComponent<SpriteRenderer>();
+            spriteRenderer.sprite = Bal;
+        }
     }
     public void P2_ChooseLeader1()
     {
-        if (P2_Leader1.image.sprite == Emeric) P2_LeaderCard.leader = emeric_LC;
-        else P2_LeaderCard.leader = bal_LC;
+        if (P2_Leader1.image.sprite == Emeric) 
+        {
+            P2_LeaderCard.leader = emeric_LC;
+            SpriteRenderer spriteRenderer = P2_LeaderCard.GetComponent<SpriteRenderer>();
+            spriteRenderer.sprite = Emeric;
+        }
+        else 
+        {
+            P2_LeaderCard.leader = bal_LC;
+            SpriteRenderer spriteRenderer = P2_LeaderCard.GetComponent<SpriteRenderer>();
+            spriteRenderer.sprite = Bal;
+        }
     }
     public void P1_ChooseLeader2()
     {
-        if (P1_Leader2.image.sprite == Talos) P1_LeaderCard.leader = talos_LC;
-        else P1_LeaderCard.leader = sheo_LC;
+        if (P1_Leader2.image.sprite == Talos)
+        {
+            P1_LeaderCard.leader = talos_LC;
+            SpriteRenderer spriteRenderer = P1_LeaderCard.GetComponent<SpriteRenderer>();
+            spriteRenderer.sprite = Talos;
+        }
+        else 
+        {   P1_LeaderCard.leader = sheo_LC;
+            SpriteRenderer spriteRenderer = P1_LeaderCard.GetComponent<SpriteRenderer>();
+            spriteRenderer.sprite = Sheo;
+        }
     }
     public void P2_ChooseLeader2()
     {
-        if (P2_Leader2.image.sprite == Talos) P2_LeaderCard.leader = talos_LC;
-        else P2_LeaderCard.leader = sheo_LC;
+        if (P2_Leader2.image.sprite == Talos)
+        {
+            P2_LeaderCard.leader = talos_LC;
+            SpriteRenderer spriteRenderer = P2_LeaderCard.GetComponent<SpriteRenderer>();
+            spriteRenderer.sprite = Talos;
+        }
+        else 
+        {
+            P2_LeaderCard.leader = sheo_LC;
+            SpriteRenderer spriteRenderer = P2_LeaderCard.GetComponent<SpriteRenderer>();
+            spriteRenderer.sprite = Sheo;
+        }
     }
     public void P1_ChooseLeader3()
     {
-        if (P1_Leader3.image.sprite == Mede) P1_LeaderCard.leader = mede_LC;
-        else P1_LeaderCard.leader = dagon_LC;
+        if (P1_Leader3.image.sprite == Mede)
+        { 
+            P1_LeaderCard.leader = mede_LC;
+            SpriteRenderer spriteRenderer = P1_LeaderCard.GetComponent<SpriteRenderer>();
+            spriteRenderer.sprite = Mede;
+        }
+        else 
+        {
+            P1_LeaderCard.leader = dagon_LC;
+            SpriteRenderer spriteRenderer = P1_LeaderCard.GetComponent<SpriteRenderer>();
+            spriteRenderer.sprite = Dagon;
+        }
     }
     public void P2_ChooseLeader3()
     {
-        if (P2_Leader3.image.sprite == Mede) P2_LeaderCard.leader = mede_LC;
-        else P2_LeaderCard.leader = dagon_LC;
+        if (P2_Leader3.image.sprite == Mede)
+        {
+            P2_LeaderCard.leader = mede_LC;
+            SpriteRenderer spriteRenderer = P2_LeaderCard.GetComponent<SpriteRenderer>();
+            spriteRenderer.sprite = Mede;
+        }
+        else
+        {
+            P2_LeaderCard.leader = dagon_LC;
+            SpriteRenderer spriteRenderer = P2_LeaderCard.GetComponent<SpriteRenderer>();
+            spriteRenderer.sprite = Dagon;
+        }
     }
     public void Continue2()
     {

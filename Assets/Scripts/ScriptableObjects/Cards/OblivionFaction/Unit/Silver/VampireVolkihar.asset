@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: VampireVolkihar
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: f71ab9bdd3aa894408d60763222dd781, type: 3}
+  Tittle: Vampiro Volkihar
   Effect_description: 
   Faction: 1
+  Efect: 0
   Power: 0
   AType: 0
   LType: 0

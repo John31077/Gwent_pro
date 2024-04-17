@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: CaiusCosades
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 6f243721a9bb7314ca00fa74b99d8a25, type: 3}
+  Tittle: Caius Cosades
   Effect_description: 
   Faction: 0
+  Efect: 0
   Power: 0
   AType: 0
   LType: 0

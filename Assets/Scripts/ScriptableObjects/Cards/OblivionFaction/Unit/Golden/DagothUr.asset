@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: DagothUr
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 108aa09f402a04b41a38d3892a7e31d9, type: 3}
+  Tittle: Dagoth Ur
   Effect_description: 
   Faction: 1
+  Efect: 0
   Power: 0
   AType: 0
   LType: 1

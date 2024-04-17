@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Potema
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 5b003d35dbe68b74c8fe9ac6ed77a4c7, type: 3}
+  Tittle: Potema
   Effect_description: 
   Faction: 1
+  Efect: 0
   Power: 0
   AType: 1
   LType: 0

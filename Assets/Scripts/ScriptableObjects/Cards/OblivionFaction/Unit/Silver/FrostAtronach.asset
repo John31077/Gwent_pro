@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: FrostAtronach
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 9efe198ae5308f141ae7598b26f3b209, type: 3}
+  Tittle: Atronach de Escarcha
+  Effect_description: 
   Faction: 1
+  Efect: 0
   Power: 0
   AType: 0
   LType: 0

@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Dovahkiin
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 92e7dd935e5e58146a7fc1fc429bc5af, type: 3}
+  Tittle: Dovahkiin
   Effect_description: 
   Faction: 0
+  Efect: 0
   Power: 0
   AType: 0
   LType: 0

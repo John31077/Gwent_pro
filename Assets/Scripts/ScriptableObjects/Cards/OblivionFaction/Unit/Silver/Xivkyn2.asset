@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Xivkyn2
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 83eb43f9346f13e4bb9615c05b35d210, type: 3}
+  Tittle: Xivkyn
   Effect_description: 
   Faction: 1
+  Efect: 0
   Power: 0
   AType: 0
   LType: 0

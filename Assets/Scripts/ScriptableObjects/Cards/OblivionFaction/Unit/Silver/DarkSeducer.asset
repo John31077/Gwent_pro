@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: DarkSeducer
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 0220d4928ebd3db4883ee76eb7f84b59, type: 3}
+  Tittle: Seductor Oscuro
   Effect_description: 
   Faction: 1
+  Efect: 0
   Power: 0
   AType: 0
   LType: 0

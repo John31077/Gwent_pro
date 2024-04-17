@@ -66,8 +66,13 @@
     <Compile Include="Assets\Scripts\ScriptableObjects\Cards\UnitCard.cs" />
     <Compile Include="Assets\Scripts\Begin.cs" />
     <Compile Include="Assets\Scripts\InitialMenu.cs" />
+    <Compile Include="Assets\Scripts\InstantiatePrefabs.cs" />
     <Compile Include="Assets\Scripts\Players\DeckList.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjects\Cards\WeatherCard.cs" />
+    <Compile Include="Assets\Scripts\Players\RealDeck.cs" />
+    <Compile Include="Assets\Scripts\PrefabScripts\PreF_UnitCard.cs" />
     <Compile Include="Assets\Scripts\Players\LeaderSection.cs" />
+    <Compile Include="Assets\Scripts\PrefabScripts\Pref_WeatherCard.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\Cards\Card.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\Cards\LeaderCard.cs" />
     <Compile Include="Assets\Scripts\Pause.cs" />

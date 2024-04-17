@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Werewolf
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 6dfe767ccf21fae4f9e90b1e0c45c4cd, type: 3}
+  Tittle: Hombre Lobo
   Effect_description: 
   Faction: 1
+  Efect: 0
   Power: 0
   AType: 0
   LType: 0

@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Seeker
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 5e7de468eb9cd304ab56b2a0e5326ee3, type: 3}
+  Tittle: Buscador
   Effect_description: 
   Faction: 1
+  Efect: 0
   Power: 0
   AType: 1
   LType: 0

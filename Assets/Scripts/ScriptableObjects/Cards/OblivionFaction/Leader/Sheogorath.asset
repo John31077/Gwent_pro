@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Sheogorath
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 8f4891bf90c0b3b46967b82a665c0549, type: 3}
+  Tittle: Sheogorath
   Effect_description: 
   Faction: 1
+  Efect: 0

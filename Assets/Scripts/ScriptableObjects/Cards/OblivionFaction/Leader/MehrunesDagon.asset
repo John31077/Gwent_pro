@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: MehrunesDagon
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 36cada89e31dca447bdba260c14f4d2f, type: 3}
+  Tittle: Mehrunes Dagon
   Effect_description: 
   Faction: 1
+  Efect: 0

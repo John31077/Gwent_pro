@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Legionary1
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: d621c3e9125a161429e439d4cc90af23, type: 3}
+  Tittle: Legionario
   Effect_description: 
   Faction: 0
+  Efect: 0
   Power: 0
   AType: 0
   LType: 0

@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Catapult
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 774a2d112c1e8f548b06c9aa6bd3ee4e, type: 3}
+  Tittle: Catapulta
   Effect_description: 
   Faction: 0
+  Efect: 0
   Power: 0
   AType: 2
   LType: 0

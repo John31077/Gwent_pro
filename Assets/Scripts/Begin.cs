@@ -12,9 +12,13 @@ public class Begin : MonoBehaviour
     [SerializeField]private List<Card> Deck_Oblivion;
     public DeckList destinationP1;
     public DeckList destinationP2;
+    public GameObject Pause;
+    public GameObject Opening;
     public GameObject warning;
     public GameObject deckSelection;
     public GameObject LeaderSelection;
+    public GameObject BoardSelection;
+    public GameObject OriginalBoard;
     public Button P1_Leader1;
     public Button P1_Leader2;
     public Button P1_Leader3;
@@ -27,6 +31,9 @@ public class Begin : MonoBehaviour
     public Sprite Emeric;
     public Sprite Talos;
     public Sprite Mede;
+    public Sprite EmpireBoard;
+    public Sprite OblivionBoard;
+    public Sprite RusticBoard;
     public LeaderSection P1_LeaderCard;
     public LeaderSection P2_LeaderCard;
     public LeaderCard emeric_LC;
@@ -35,14 +42,6 @@ public class Begin : MonoBehaviour
     public LeaderCard dagon_LC;
     public LeaderCard sheo_LC;
     public LeaderCard bal_LC;
-
-
-
-
-
-
-
-
 
 
     public void AplyDeckOblivionP1()
@@ -65,7 +64,7 @@ public class Begin : MonoBehaviour
         destinationP2.DeckSO.Clear();
         destinationP2.DeckSO.AddRange(Deck_Empire);
     }
-    public void Continue()
+    public void Continue1()
     {
         
         if (destinationP1.DeckSO.Count == 0 || destinationP2.DeckSO.Count == 0)
@@ -78,7 +77,6 @@ public class Begin : MonoBehaviour
             LeaderSelection.SetActive(true);
         }
     }
-
     public void RefreshLeaders()
     {
         foreach (Card card in destinationP1.DeckSO)
@@ -117,62 +115,68 @@ public class Begin : MonoBehaviour
         }
         
     }
+    public void P1_ChooseLeader1()
+    {
+        if (P1_Leader1.image.sprite == Emeric) P1_LeaderCard.leader = emeric_LC;
+        else P1_LeaderCard.leader = bal_LC;
+    }
+    public void P2_ChooseLeader1()
+    {
+        if (P2_Leader1.image.sprite == Emeric) P2_LeaderCard.leader = emeric_LC;
+        else P2_LeaderCard.leader = bal_LC;
+    }
+    public void P1_ChooseLeader2()
+    {
+        if (P1_Leader2.image.sprite == Talos) P1_LeaderCard.leader = talos_LC;
+        else P1_LeaderCard.leader = sheo_LC;
+    }
+    public void P2_ChooseLeader2()
+    {
+        if (P2_Leader2.image.sprite == Talos) P2_LeaderCard.leader = talos_LC;
+        else P2_LeaderCard.leader = sheo_LC;
+    }
+    public void P1_ChooseLeader3()
+    {
+        if (P1_Leader3.image.sprite == Mede) P1_LeaderCard.leader = mede_LC;
+        else P1_LeaderCard.leader = dagon_LC;
+    }
+    public void P2_ChooseLeader3()
+    {
+        if (P2_Leader3.image.sprite == Mede) P2_LeaderCard.leader = mede_LC;
+        else P2_LeaderCard.leader = dagon_LC;
+    }
+    public void Continue2()
+    {
+        if (P1_LeaderCard.leader == null || P2_LeaderCard.leader == null)
+        {
+            warning.SetActive(true);
+        }
+        else
+        {
+            LeaderSelection.SetActive(false);
+            BoardSelection.SetActive(true);
+        }
+    }
+    public void ChangeBoard1()
+    {
+        SpriteRenderer BoardSprite = OriginalBoard.GetComponent<SpriteRenderer>();
+        BoardSprite.sprite = EmpireBoard;
+    }
+    public void ChangeBoard2()
+    {
+        SpriteRenderer BoardSprite = OriginalBoard.GetComponent<SpriteRenderer>();
+        BoardSprite.sprite = OblivionBoard;
+    }
+    public void ChangeBoard3()
+    {
+        SpriteRenderer BoardSprite = OriginalBoard.GetComponent<SpriteRenderer>();
+        BoardSprite.sprite = RusticBoard;
+    }
 
-    public void ChooseLeader1()
+    public void Continue3()
     {
-        if (P1_Leader1.image.sprite == Emeric)
-        {
-            P1_LeaderCard.leader = emeric_LC;
-        }
-        else
-        {
-            P1_LeaderCard.leader = bal_LC;
-        }
-        if (P2_Leader1.image.sprite == Emeric)
-        {
-            P2_LeaderCard.leader = emeric_LC;
-        }
-        else
-        {
-            P2_LeaderCard.leader = bal_LC;
-        }
+        Opening.SetActive(false);
+        Pause.SetActive(true);
     }
-    public void ChooseLeader2()
-    {
-        if (P1_Leader2.image.sprite == Talos)
-        {
-            P1_LeaderCard.leader = talos_LC;
-        }
-        else
-        {
-            P1_LeaderCard.leader = sheo_LC;
-        }
-        if (P2_Leader2.image.sprite == Talos)
-        {
-            P2_LeaderCard.leader = talos_LC;
-        }
-        else
-        {
-            P2_LeaderCard.leader = sheo_LC;
-        }
-    }
-     public void ChooseLeader3()
-    {
-        if (P1_Leader3.image.sprite == Mede)
-        {
-            P1_LeaderCard.leader = mede_LC;
-        }
-        else
-        {
-            P1_LeaderCard.leader = dagon_LC;
-        }
-        if (P2_Leader3.image.sprite == Mede)
-        {
-            P2_LeaderCard.leader = mede_LC;
-        }
-        else
-        {
-            P2_LeaderCard.leader = dagon_LC;
-        }
-    }
+
 }

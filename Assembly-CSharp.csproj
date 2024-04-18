@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\Begin.cs" />
     <Compile Include="Assets\Scripts\InitialMenu.cs" />
     <Compile Include="Assets\Scripts\InstantiatePrefabs.cs" />
+    <Compile Include="Assets\Scripts\Players\AddToList.cs" />
     <Compile Include="Assets\Scripts\Players\DeckList.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\Cards\WeatherCard.cs" />
     <Compile Include="Assets\Scripts\Players\RealDeck.cs" />

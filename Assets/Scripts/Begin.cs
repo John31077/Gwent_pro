@@ -247,6 +247,7 @@ public class Begin : MonoBehaviour
     {
         Opening.SetActive(false);
         Pause.SetActive(true);
+        
     }
 
 }

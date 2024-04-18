@@ -8,7 +8,7 @@ public class AddToList : MonoBehaviour
     public RealDeck Deck;
     public RealDeck Destination;
     public GameObject parent;
-    public GameObject P1_PanelHand;
+    public Vector3 newPosition;
 
     public void AddToHand()
     {
@@ -17,7 +17,34 @@ public class AddToList : MonoBehaviour
         Deck.Real_Cards.RemoveRange(0,10);
         foreach (GameObject card in Destination.Real_Cards)
         {
-            card.transform.SetParent(P1_PanelHand.transform);
+            card.transform.SetParent(parent.transform);
+            card.GetComponent<Transform>().position = newPosition;
+            newPosition = new Vector3 (card.transform.position.x - 19.69f, card.transform.position.y, 0);
         }
+    }
+
+    public void AddToGraveyard()
+    {
+
+    }
+
+    public void AddToBuff()
+    {
+
+    }
+
+    public void AddToMelee()
+    {
+        
+    }
+
+    public void AddToRange()
+    {
+
+    }
+
+    public void AddToSiege()
+    {
+
     }
 }

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d40fa465d619e340aab2de3eed93bdc, type: 3}
   m_Name: Talos
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 41c31cb0e2106414990c847fb2971d3b, type: 3}
+  Image: {fileID: 21300000, guid: 7ce2aa69a8939964b8b3b8781b053500, type: 3}
   Tittle: Tiber Septim
-  Effect_description: 
+  Effect_description: Duplica el poder de una fila
   Faction: 0
-  Efect: 0
+  Efect: 1

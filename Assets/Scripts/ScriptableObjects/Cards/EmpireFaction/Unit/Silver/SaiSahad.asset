@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b5f7759b3ba3f46b9fa18197f113c7, type: 3}
   m_Name: SaiSahad
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: a7577d6424313b343b45be70d43a6ceb, type: 3}
+  Image: {fileID: 21300000, guid: e9e33ea69aed6cd418ab2c0a471d9cc6, type: 3}
   Tittle: Sai Sahad
-  Effect_description: 
+  Effect_description: Esta carta no tiene efectos
   Faction: 0
   Efect: 0
-  Power: 0
+  Power: 9
   AType: 0
   LType: 0

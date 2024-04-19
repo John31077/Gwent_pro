@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b68924ac888eedd4a94883a78b8cddd8, type: 3}
   m_Name: Sunny
   m_EditorClassIdentifier: 
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 898547fb1a4ea2a4a84d52cb746bc5c8, type: 3}
   Tittle: Soleado
   Effect_description: Despeja todos los climas
   Faction: 2

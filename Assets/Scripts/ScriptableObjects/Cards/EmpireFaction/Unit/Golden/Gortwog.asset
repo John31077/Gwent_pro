@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b5f7759b3ba3f46b9fa18197f113c7, type: 3}
   m_Name: Gortwog
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 9154dd5349139c44d8983495d76d7485, type: 3}
+  Image: {fileID: 21300000, guid: 49ed59f5131c6d047983821e66b6f55b, type: 3}
   Tittle: Gortwog gro Nagorm
-  Effect_description: 
+  Effect_description: Calcula el promedio de poder entre todas las cartas del campo.
+    Luego iguala el poder de todas las cartas del campo a ese promedio.
   Faction: 0
-  Efect: 0
-  Power: 0
+  Efect: 8
+  Power: 10
   AType: 0
   LType: 1

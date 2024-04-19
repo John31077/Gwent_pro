@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public abstract class Card : ScriptableObject 
+[CreateAssetMenu(fileName = "New Card", menuName = "Card (solamente usar para crear la carta Fuego o Horn)")]
+public class Card : ScriptableObject 
 {
     [SerializeField]public Sprite Image;
     [SerializeField]public string Tittle;
@@ -31,6 +31,7 @@ public enum eEfect
     Steal, //Robar carta
     Companion, // multiplicar por n el ataque de las cartas con el mismo nombre (siendo n la cantidad de cartas)
     Clear, //Limpia la fila con menos unidades
-    Average //Promedio
+    Average, //Promedio
+    Señuelo //Vamos, el señuelo
 
 }

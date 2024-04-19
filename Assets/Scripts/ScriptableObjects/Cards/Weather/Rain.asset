@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b68924ac888eedd4a94883a78b8cddd8, type: 3}
   m_Name: Rain
   m_EditorClassIdentifier: 
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 40b4a235a5d8f10408b6f81e569581f9, type: 3}
   Tittle: Lluvia
   Effect_description: Reduce a 1 el ataque de todas las unidades de asedio
   Faction: 2

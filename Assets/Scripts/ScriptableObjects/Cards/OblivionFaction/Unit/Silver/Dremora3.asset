@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b5f7759b3ba3f46b9fa18197f113c7, type: 3}
   m_Name: Dremora3
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: e62d1ad8ee2c36e4fa0757b3c71e5c45, type: 3}
-  Tittle: Dremora
-  Effect_description: 
+  Image: {fileID: 21300000, guid: dee8d2212a05337479c0d1495ec413d5, type: 3}
+  Tittle: Dremora Markynaz
+  Effect_description: Esta carta no tiene efectos
   Faction: 1
   Efect: 0
-  Power: 0
+  Power: 6
   AType: 0
   LType: 0

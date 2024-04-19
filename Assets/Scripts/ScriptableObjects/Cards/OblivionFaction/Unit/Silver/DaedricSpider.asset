@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b5f7759b3ba3f46b9fa18197f113c7, type: 3}
   m_Name: DaedricSpider
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 4069a72ecc278ca419a5bb7cc842a686, type: 3}
+  Image: {fileID: 21300000, guid: 271518a3a99e20d4e851d924508d9dce, type: 3}
   Tittle: "Ara\xF1a Da\xE9drica"
-  Effect_description: 
+  Effect_description: Esta carta no tiene efectos
   Faction: 1
   Efect: 0
-  Power: 0
-  AType: 0
+  Power: 3
+  AType: 1
   LType: 0

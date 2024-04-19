@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b5f7759b3ba3f46b9fa18197f113c7, type: 3}
   m_Name: Ariete
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 588166a6d5e401b43987b8e6012284d3, type: 3}
+  Image: {fileID: 21300000, guid: 882311512f5c50f40b52dda8c5ec0c10, type: 3}
   Tittle: Ariete
-  Effect_description: 
+  Effect_description: Esta carta no tiene efectos
   Faction: 0
   Efect: 0
-  Power: 0
+  Power: 5
   AType: 2
   LType: 0

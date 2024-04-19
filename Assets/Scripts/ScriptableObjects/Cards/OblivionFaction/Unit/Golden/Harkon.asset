@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b5f7759b3ba3f46b9fa18197f113c7, type: 3}
   m_Name: Harkon
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 79352fe6c83157b4db87a65e4ac6a20d, type: 3}
+  Image: {fileID: 21300000, guid: c49f285cd8b563b48884c7aa34d70182, type: 3}
   Tittle: Lord Harkon
-  Effect_description: 
+  Effect_description: Eliminar la carta con menos poder del rival
   Faction: 1
-  Efect: 0
-  Power: 0
-  AType: 1
+  Efect: 4
+  Power: 10
+  AType: 0
   LType: 1

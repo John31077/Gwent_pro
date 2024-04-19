@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b5f7759b3ba3f46b9fa18197f113c7, type: 3}
   m_Name: Archer2
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 861b7bbf113fda6419145d9ac5538cc5, type: 3}
+  Image: {fileID: 21300000, guid: adca237722f80f54d8d45b29c5facb1c, type: 3}
   Tittle: Arquero
-  Effect_description: 
+  Effect_description: Multiplica por n su ataque, siendo n la cantidad de cartas
+    iguales a ella en el campo
   Faction: 0
-  Efect: 0
-  Power: 0
+  Efect: 6
+  Power: 3
   AType: 1
   LType: 0

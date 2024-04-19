@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b5f7759b3ba3f46b9fa18197f113c7, type: 3}
   m_Name: FleshAtronach
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 546c892e032e3da45a34b3e5d796a17e, type: 3}
+  Image: {fileID: 21300000, guid: 6d6f7106f5937fa4eae8fbc6d5a883a2, type: 3}
   Tittle: Atonach de Carne
-  Effect_description: 
+  Effect_description: Esta carta no tiene efectos
   Faction: 1
   Efect: 0
-  Power: 0
-  AType: 0
+  Power: 8
+  AType: 2
   LType: 0

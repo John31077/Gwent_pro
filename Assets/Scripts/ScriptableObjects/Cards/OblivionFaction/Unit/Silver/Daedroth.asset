@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b5f7759b3ba3f46b9fa18197f113c7, type: 3}
   m_Name: Daedroth
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 1a01113239a3ab445a01f4c92a35c1e6, type: 3}
+  Image: {fileID: 21300000, guid: 0977a0954a0a0a44d8319995b9c6f4fc, type: 3}
   Tittle: Daedroth
-  Effect_description: 
+  Effect_description: Esta carta no tiene efectos
   Faction: 1
   Efect: 0
-  Power: 0
+  Power: 4
   AType: 0
   LType: 0

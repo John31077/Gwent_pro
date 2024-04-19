@@ -5456,7 +5456,7 @@ PrefabInstance:
     - target: {fileID: 2104200967723487325, guid: 67b00a73b9db6444991a341536a24e43, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 2a6dfd7f19f342e43aaecf9133d5c147, type: 3}
+      objectReference: {fileID: 21300000, guid: 63148b5d660b43f42afb68cc0b88f831, type: 3}
     - target: {fileID: 2104200967723487325, guid: 67b00a73b9db6444991a341536a24e43, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -5509,6 +5509,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5573124915972621234, guid: 67b00a73b9db6444991a341536a24e43, type: 3}
+      propertyPath: unit_Card
+      value: 
+      objectReference: {fileID: 11400000, guid: 92189e494c3030941962fe66e05d96b1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7010,6 +7014,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fe1968fc24d8d7147aa16a11dd6028ae, type: 2}
   - {fileID: 11400000, guid: f539f4b0281622546a559cd7327c8e25, type: 2}
   - {fileID: 11400000, guid: 7a662ed8bf399b2469868abdda11e84b, type: 2}
+  - {fileID: 11400000, guid: f002ca53d2da0a1408906fd403150f02, type: 2}
   destinationP1: {fileID: 612858923}
   destinationP2: {fileID: 601003998}
   Pause: {fileID: 980444599}
@@ -7028,12 +7033,12 @@ MonoBehaviour:
   Dagon: {fileID: 21300000, guid: 36cada89e31dca447bdba260c14f4d2f, type: 3}
   Sheo: {fileID: 21300000, guid: 8f4891bf90c0b3b46967b82a665c0549, type: 3}
   Bal: {fileID: 21300000, guid: 42a9909ff53cced4d8f6e18b378c73fe, type: 3}
-  Emeric: {fileID: 21300000, guid: 264486166c7e9dd458ab86d04b09fe97, type: 3}
-  Talos: {fileID: 21300000, guid: 41c31cb0e2106414990c847fb2971d3b, type: 3}
-  Mede: {fileID: 21300000, guid: 119a4b8364942d44cbf960e346e7cc9f, type: 3}
+  Emeric: {fileID: 21300000, guid: c5e63b47965044844b2f53f6dcf450e0, type: 3}
+  Talos: {fileID: 21300000, guid: 7ce2aa69a8939964b8b3b8781b053500, type: 3}
+  Mede: {fileID: 21300000, guid: 08c245f674d98bf4a90f373411abafe7, type: 3}
   OblivionBack: {fileID: 21300000, guid: 1164cca10cb69b34da24e8d908400b05, type: 3}
   EmpireBack: {fileID: 21300000, guid: 6ce049f25481467449b8609e56e16e78, type: 3}
-  EmpireBoard: {fileID: 21300000, guid: 13525618d829ad045abfb7b7de97c124, type: 3}
+  EmpireBoard: {fileID: 21300000, guid: 4bdffcf2dae090c4cbd6cf8bda0aaffb, type: 3}
   OblivionBoard: {fileID: 21300000, guid: 1a4e21cb678d049498a1844211bac2b7, type: 3}
   RusticBoard: {fileID: 21300000, guid: 64b127b52c5e1984ca5f2a92d62771ae, type: 3}
   P1_LeaderCard: {fileID: 1642712218}
@@ -7308,7 +7313,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 546c892e032e3da45a34b3e5d796a17e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6149d34c81b71e34fb6ec4d1c8cd42c2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7665,7 +7670,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 13525618d829ad045abfb7b7de97c124, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4bdffcf2dae090c4cbd6cf8bda0aaffb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

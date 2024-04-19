@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b5f7759b3ba3f46b9fa18197f113c7, type: 3}
   m_Name: Xivkyn3
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 8beb5867dfcf86a4c8da310f02a30e22, type: 3}
+  Image: {fileID: 21300000, guid: 85e2d0978d61edc4292c05d9a6141ff6, type: 3}
   Tittle: Xivkyn
-  Effect_description: 
+  Effect_description: Multiplica por n su ataque, siendo n la cantidad de cartas
+    iguales a ella en el campo
   Faction: 1
-  Efect: 0
-  Power: 0
+  Efect: 6
+  Power: 4
   AType: 0
   LType: 0

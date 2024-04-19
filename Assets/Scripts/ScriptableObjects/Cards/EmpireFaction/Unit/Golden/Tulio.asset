@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b5f7759b3ba3f46b9fa18197f113c7, type: 3}
   m_Name: Tulio
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 3e16d7c540032124e95ca139a0c417b1, type: 3}
+  Image: {fileID: 21300000, guid: f31a4b0000d4dfa43952d502daee2a35, type: 3}
   Tittle: General Tulio
-  Effect_description: 
+  Effect_description: Duplica el poder de la fila
   Faction: 0
-  Efect: 0
-  Power: 0
-  AType: 0
-  LType: 0
+  Efect: 1
+  Power: 10
+  AType: 2
+  LType: 1

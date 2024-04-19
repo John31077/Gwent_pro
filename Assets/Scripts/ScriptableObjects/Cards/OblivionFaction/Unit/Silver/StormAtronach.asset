@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b5f7759b3ba3f46b9fa18197f113c7, type: 3}
   m_Name: StormAtronach
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 2a6dfd7f19f342e43aaecf9133d5c147, type: 3}
+  Image: {fileID: 21300000, guid: 641fc6adfe28dbb4a9ae6ba4b15b41f6, type: 3}
   Tittle: Atronach de Tormenta
-  Effect_description: 
+  Effect_description: Esta carta no tiene efectos
   Faction: 1
   Efect: 0
-  Power: 0
-  AType: 1
+  Power: 7
+  AType: 2
   LType: 0

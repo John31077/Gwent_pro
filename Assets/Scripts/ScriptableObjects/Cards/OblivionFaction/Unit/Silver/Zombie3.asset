@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b5f7759b3ba3f46b9fa18197f113c7, type: 3}
   m_Name: Zombie3
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: b012b5076f9240445a79ac51ccfb211e, type: 3}
+  Image: {fileID: 21300000, guid: 029816462cf376b47a33e24b657c41c2, type: 3}
   Tittle: Zombi
-  Effect_description: 
+  Effect_description: Multiplica por n su ataque, siendo n la cantidad de cartas
+    iguales a ella en el campo
   Faction: 1
-  Efect: 0
-  Power: 0
+  Efect: 6
+  Power: 2
   AType: 0
   LType: 0

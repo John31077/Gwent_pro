@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b5f7759b3ba3f46b9fa18197f113c7, type: 3}
   m_Name: Clannfear
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: ba1308ab104ef2b4ea35e853ef673d15, type: 3}
+  Image: {fileID: 21300000, guid: 802e1e94f8bd8bd4bb17db7a2e1c70ed, type: 3}
   Tittle: Clannfear
-  Effect_description: 
+  Effect_description: Esta carta no tiene efectos
   Faction: 1
   Efect: 0
-  Power: 0
+  Power: 4
   AType: 0
   LType: 0

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b68924ac888eedd4a94883a78b8cddd8, type: 3}
   m_Name: Fog
   m_EditorClassIdentifier: 
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 6bc21be39c61f9645a2aae034c088f77, type: 3}
   Tittle: Niebla
   Effect_description: Reduce a 1 el ataque de todas las unidades a distancia
   Faction: 2

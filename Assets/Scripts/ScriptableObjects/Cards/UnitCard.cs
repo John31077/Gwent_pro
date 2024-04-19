@@ -13,7 +13,8 @@ public enum Attack_type
 {
     Melee,
     Range,
-    Siege
+    Siege,
+    Señuelo
 }
 
 

@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b5f7759b3ba3f46b9fa18197f113c7, type: 3}
   m_Name: Breton
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 10a98da84da481d4fab602cc62ec50fa, type: 3}
+  Image: {fileID: 21300000, guid: 1036c54da2018e541a73cb3446e1d9f1, type: 3}
   Tittle: Breton
-  Effect_description: 
+  Effect_description: Esta carta no tiene efectos
   Faction: 0
   Efect: 0
-  Power: 0
+  Power: 9
   AType: 0
   LType: 0

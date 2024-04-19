@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b5f7759b3ba3f46b9fa18197f113c7, type: 3}
   m_Name: VampireSavage
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 548d6cf45e78a544a922b2bb547030d4, type: 3}
+  Image: {fileID: 21300000, guid: 466e93bb530724940b2f765320fa66ed, type: 3}
   Tittle: Vampiro Salvaje
-  Effect_description: 
+  Effect_description: Esta carta no tiene efectos
   Faction: 1
   Efect: 0
-  Power: 0
+  Power: 1
   AType: 0
   LType: 0

@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b5f7759b3ba3f46b9fa18197f113c7, type: 3}
   m_Name: Dreugh
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: dd4b9757a429ab947bfa0507950826b0, type: 3}
+  Image: {fileID: 21300000, guid: 198e9a9448348fa46a318a72d9c8dd6d, type: 3}
   Tittle: Dreugh
-  Effect_description: 
+  Effect_description: Esta carta no tiene efectos
   Faction: 1
   Efect: 0
-  Power: 0
+  Power: 3
   AType: 0
   LType: 0

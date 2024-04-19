@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b5f7759b3ba3f46b9fa18197f113c7, type: 3}
   m_Name: Rikke
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: c4f3ddf4bda1d734983693b657974c19, type: 3}
+  Image: {fileID: 21300000, guid: d115d612cd7744d4d9ef257936d3fe93, type: 3}
   Tittle: Rikke
-  Effect_description: 
+  Effect_description: Esta carta no tiene efectos
   Faction: 0
   Efect: 0
-  Power: 0
-  AType: 0
+  Power: 5
+  AType: 2
   LType: 0

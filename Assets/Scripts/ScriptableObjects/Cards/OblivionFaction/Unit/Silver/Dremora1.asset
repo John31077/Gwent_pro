@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b5f7759b3ba3f46b9fa18197f113c7, type: 3}
   m_Name: Dremora1
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 71dd3296716229a4598fedb3a21a1794, type: 3}
-  Tittle: Dremora
-  Effect_description: 
+  Image: {fileID: 21300000, guid: 85c13783223c1c14090c0d92c9ba6eeb, type: 3}
+  Tittle: Dremora caitiff
+  Effect_description: Esta carta no tiene efectos
   Faction: 1
   Efect: 0
-  Power: 0
+  Power: 6
   AType: 0
   LType: 0

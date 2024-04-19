@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b5f7759b3ba3f46b9fa18197f113c7, type: 3}
   m_Name: Centurion2
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 877dc7e76a391e64f9eed2fe8594baf1, type: 3}
+  Image: {fileID: 21300000, guid: bb26f6f8b0c2f204e862874b6015a8a3, type: 3}
   Tittle: "Centuri\xF3n2"
-  Effect_description: 
+  Effect_description: Esta carta no tiene efectos
   Faction: 0
   Efect: 0
-  Power: 0
+  Power: 8
   AType: 0
   LType: 0

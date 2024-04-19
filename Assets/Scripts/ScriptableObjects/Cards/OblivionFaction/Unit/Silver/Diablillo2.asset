@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b5f7759b3ba3f46b9fa18197f113c7, type: 3}
   m_Name: Diablillo2
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 1c1e3f1e9657284428be4c32da5abe04, type: 3}
+  Image: {fileID: 21300000, guid: ee79b63b9fe6a5c4e9a710beebe103c0, type: 3}
   Tittle: Diablillo
-  Effect_description: 
+  Effect_description: 'Multiplica por n su ataque, siendo n la cantidad de cartas
+    iguales a ella en el campo. '
   Faction: 1
-  Efect: 0
-  Power: 0
+  Efect: 6
+  Power: 2
   AType: 0
   LType: 0

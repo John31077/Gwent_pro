@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b5f7759b3ba3f46b9fa18197f113c7, type: 3}
   m_Name: Ayrenn
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 9184258df9d91e84496e17e9904103d8, type: 3}
+  Image: {fileID: 21300000, guid: a8736c0754d055c46936cac117d83ad1, type: 3}
   Tittle: Reina Ayrenn
-  Effect_description: 
+  Effect_description: Elimina la carta con mas poder del campo
   Faction: 0
-  Efect: 0
-  Power: 0
-  AType: 0
+  Efect: 3
+  Power: 10
+  AType: 1
   LType: 1

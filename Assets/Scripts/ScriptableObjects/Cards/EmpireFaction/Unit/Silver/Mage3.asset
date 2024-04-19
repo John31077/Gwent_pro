@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b5f7759b3ba3f46b9fa18197f113c7, type: 3}
   m_Name: Mage3
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 50b38d7578bd75141a2aee73b83e63b9, type: 3}
+  Image: {fileID: 21300000, guid: 288d5ff3099d06c4fa46f4ba414282d6, type: 3}
   Tittle: Mago3
-  Effect_description: 
+  Effect_description: Roba una carta
   Faction: 0
-  Efect: 0
-  Power: 0
+  Efect: 5
+  Power: 2
   AType: 1
   LType: 0

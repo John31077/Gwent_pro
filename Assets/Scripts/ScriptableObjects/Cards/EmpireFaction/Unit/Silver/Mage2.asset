@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b5f7759b3ba3f46b9fa18197f113c7, type: 3}
   m_Name: Mage2
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 93ff07337243bbb498b986a5bc3dd24f, type: 3}
+  Image: {fileID: 21300000, guid: c524ec41a0b7ec34e837c247f7d53112, type: 3}
   Tittle: Mago2
-  Effect_description: 
+  Effect_description: Esta carta no tiene efectos
   Faction: 0
   Efect: 0
-  Power: 0
+  Power: 6
   AType: 1
   LType: 0

@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 42a9909ff53cced4d8f6e18b378c73fe, type: 3}
   Tittle: Molag Bal
-  Effect_description: 
+  Effect_description: Elimina la carta con menos poder del rival
   Faction: 1
-  Efect: 0
+  Efect: 4

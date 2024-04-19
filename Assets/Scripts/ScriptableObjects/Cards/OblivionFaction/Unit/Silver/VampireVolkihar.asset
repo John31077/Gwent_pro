@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b5f7759b3ba3f46b9fa18197f113c7, type: 3}
   m_Name: VampireVolkihar
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: f71ab9bdd3aa894408d60763222dd781, type: 3}
+  Image: {fileID: 21300000, guid: c6786f6c2eb8b0e43aec7fdceb4b6c63, type: 3}
   Tittle: Vampiro Volkihar
-  Effect_description: 
+  Effect_description: Esta carta no tiene efectos
   Faction: 1
   Efect: 0
-  Power: 0
+  Power: 5
   AType: 0
   LType: 0

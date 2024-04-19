@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b5f7759b3ba3f46b9fa18197f113c7, type: 3}
   m_Name: Ash`abah
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: ea6818e2da68d29469b37bb1372909c6, type: 3}
+  Image: {fileID: 21300000, guid: d079c6095680ccf4e84753ebd528dbee, type: 3}
   Tittle: Ash`abah
-  Effect_description: 
+  Effect_description: Esta carta no tiene efectos
   Faction: 0
   Efect: 0
-  Power: 0
+  Power: 6
   AType: 0
   LType: 0

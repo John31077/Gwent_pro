@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b5f7759b3ba3f46b9fa18197f113c7, type: 3}
   m_Name: Mannimarco
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: dee66dacb5742604bbcd8c3d3feec4c3, type: 3}
+  Image: {fileID: 21300000, guid: 22c9b5403278b964496eb40ebe2a9172, type: 3}
   Tittle: Mannimarco
-  Effect_description: 
+  Effect_description: Calcula el promedio de poder entre todas las cartas del campo.
+    Luego iguala el poder de todas las cartas del campo a ese promedio.
   Faction: 1
-  Efect: 0
-  Power: 0
+  Efect: 8
+  Power: 10
   AType: 1
   LType: 1

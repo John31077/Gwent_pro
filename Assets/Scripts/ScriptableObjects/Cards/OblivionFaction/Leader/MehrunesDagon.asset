@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 36cada89e31dca447bdba260c14f4d2f, type: 3}
   Tittle: Mehrunes Dagon
-  Effect_description: 
+  Effect_description: Limpia la fila del campo con menos poder
   Faction: 1
-  Efect: 0
+  Efect: 7

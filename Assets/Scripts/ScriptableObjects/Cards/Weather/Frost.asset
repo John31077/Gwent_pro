@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b68924ac888eedd4a94883a78b8cddd8, type: 3}
   m_Name: Frost
   m_EditorClassIdentifier: 
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: cb16bd74a7a798d4a80e4a9cc876ce89, type: 3}
   Tittle: Escarcha
   Effect_description: Reduce a 1 el ataque de todas las unidades cuerpo a cuerpo
   Faction: 2

@@ -21,6 +21,8 @@ public class InstantiatePrefabs : MonoBehaviour
                 InstUnitCardPrefab.name = card.Tittle;
                 SpriteRenderer spriteRenderer = InstUnitCardPrefab.GetComponent<SpriteRenderer>();
                 spriteRenderer.sprite = card.Image;
+                PreF_UnitCard preF_UnitCard = InstUnitCardPrefab.GetComponent<PreF_UnitCard>();
+                preF_UnitCard.unit_Card = (Unit_card)card;
                 CardsGameObject.Real_Cards.Add(InstUnitCardPrefab);
                 InstUnitCardPrefab.transform.SetParent(CardsGameObject.transform);
             }
@@ -30,6 +32,8 @@ public class InstantiatePrefabs : MonoBehaviour
                 InstWeatherCardPrefab.name = card.Tittle;
                 SpriteRenderer spriteRenderer = InstWeatherCardPrefab.GetComponent<SpriteRenderer>();
                 spriteRenderer.sprite = card.Image;
+                Pref_WeatherCard pref_WeatherCard = InstWeatherCardPrefab.GetComponent<Pref_WeatherCard>();
+                pref_WeatherCard.weatherCard = (WeatherCard)card;
                 CardsGameObject.Real_Cards.Add(InstWeatherCardPrefab);
                 InstWeatherCardPrefab.transform.SetParent(CardsGameObject.transform);
             }

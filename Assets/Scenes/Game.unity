@@ -2953,7 +2953,7 @@ Transform:
   m_GameObject: {fileID: 601003996}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.67202, y: 1.282, z: 0}
+  m_LocalPosition: {x: 4.68, y: 2.609, z: 0}
   m_LocalScale: {x: 0.102868296, y: 0.093540505, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3033,8 +3033,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 607620196}
-  - component: {fileID: 607620198}
   - component: {fileID: 607620197}
+  - component: {fileID: 607620198}
   m_Layer: 0
   m_Name: Graveyard1
   m_TagString: Untagged
@@ -3099,7 +3099,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 67714d700afcc8b4faa7ef6f2a66ee48, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3118,10 +3118,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 607620195}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e84a7ae7dbb9394b8c09b9689cb80a9, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c549ac9d1a0d4c4bb9ac245d5c2a28a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeckSO: []
+  Real_Cards: []
 --- !u!1 &612858922
 GameObject:
   m_ObjectHideFlags: 0
@@ -3365,6 +3365,9 @@ GameObject:
   - component: {fileID: 669715641}
   - component: {fileID: 669715642}
   - component: {fileID: 669715643}
+  - component: {fileID: 669715646}
+  - component: {fileID: 669715645}
+  - component: {fileID: 669715644}
   m_Layer: 0
   m_Name: Leader2
   m_TagString: Untagged
@@ -3452,6 +3455,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &669715644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669715640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b829c31f30f52fb4288571792627deff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &669715645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669715640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cdfc8918131ffa4bac30148241a182e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &669715646
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669715640}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.2400002, y: 9.930001, z: 0.2}
+  m_Center: {x: 0, y: 0.0000038146973, z: 0}
 --- !u!1 &692182027
 GameObject:
   m_ObjectHideFlags: 0
@@ -6551,6 +6599,9 @@ GameObject:
   - component: {fileID: 1642712217}
   - component: {fileID: 1642712218}
   - component: {fileID: 1642712219}
+  - component: {fileID: 1642712222}
+  - component: {fileID: 1642712221}
+  - component: {fileID: 1642712220}
   m_Layer: 0
   m_Name: Leader1
   m_TagString: Untagged
@@ -6638,6 +6689,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1642712220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642712216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b829c31f30f52fb4288571792627deff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1642712221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642712216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cdfc8918131ffa4bac30148241a182e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1642712222
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642712216}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.2400002, y: 9.930001, z: 0.2}
+  m_Center: {x: 0, y: 0.0000019073486, z: 0}
 --- !u!1 &1645767572
 GameObject:
   m_ObjectHideFlags: 0
@@ -7266,8 +7362,8 @@ Transform:
   m_GameObject: {fileID: 1838026609}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.14643, y: 0.54456, z: 0}
-  m_LocalScale: {x: 0.51300985, y: 0.6441933, z: 1}
+  m_LocalPosition: {x: 7.24011, y: 0.79184, z: 0}
+  m_LocalScale: {x: 0.5487666, y: 0.69399583, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 153730511}
@@ -7333,8 +7429,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1958650339}
-  - component: {fileID: 1958650341}
   - component: {fileID: 1958650340}
+  - component: {fileID: 1958650341}
   m_Layer: 0
   m_Name: Graveyard2
   m_TagString: Untagged
@@ -7351,7 +7447,7 @@ Transform:
   m_GameObject: {fileID: 1958650338}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.675, y: 2.6, z: 0}
+  m_LocalPosition: {x: 4.675, y: 1.257, z: 0}
   m_LocalScale: {x: 0.102868296, y: 0.093540505, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7399,7 +7495,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 67714d700afcc8b4faa7ef6f2a66ee48, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -7418,10 +7514,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1958650338}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e84a7ae7dbb9394b8c09b9689cb80a9, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c549ac9d1a0d4c4bb9ac245d5c2a28a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeckSO: []
+  Real_Cards: []
 --- !u!1 &1990662896
 GameObject:
   m_ObjectHideFlags: 0

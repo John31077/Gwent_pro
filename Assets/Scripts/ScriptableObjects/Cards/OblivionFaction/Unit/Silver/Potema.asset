@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b5f7759b3ba3f46b9fa18197f113c7, type: 3}
   m_Name: Potema
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 5b003d35dbe68b74c8fe9ac6ed77a4c7, type: 3}
+  Image: {fileID: 21300000, guid: 2f9268db38733254b9331f8fb909d64a, type: 3}
   Tittle: Potema
   Effect_description: Esta carta no tiene efectos
   Faction: 1

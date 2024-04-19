@@ -24,9 +24,53 @@ public class AddToList : MonoBehaviour
         }
     }
 
-    public void AddToGraveyardAllCards()
+    public static void AddToGraveyardOneCards(GameObject cardToSend, RealDeck origin)
     {
+        if (cardToSend.transform.IsChildOf(GameObject.Find("Player1").transform))
+        {
+            RealDeck graveyard = GameObject.Find("Graveyard1").GetComponent<RealDeck>();
+            if (graveyard.Real_Cards.Contains(cardToSend))
+            {
+                Debug.Log("La carta ya se encuentra en el cementerio");
+            }
+            else if (origin.Real_Cards.Contains(cardToSend))
+            {
+                graveyard.GetComponent<RealDeck>().Real_Cards.Add(cardToSend);
+                origin.Real_Cards.Remove(cardToSend);
+                cardToSend.GetComponent<Transform>().SetParent(graveyard.transform);
+                cardToSend.GetComponent<Transform>().position = new Vector3 (-251.8f,67,0);
+            }
+        }
+        if (cardToSend.transform.IsChildOf(GameObject.Find("Player2").transform))
+        {
+            RealDeck graveyard = GameObject.Find("Graveyard2").GetComponent<RealDeck>();
+            if (graveyard.Real_Cards.Contains(cardToSend))
+            {
+                Debug.Log("La carta ya se encuentra en el cementerio");
+            }
+            else if (origin.Real_Cards.Contains(cardToSend))
+            {
+                graveyard.GetComponent<RealDeck>().Real_Cards.Add(cardToSend);
+                origin.Real_Cards.Remove(cardToSend);
+                cardToSend.GetComponent<Transform>().SetParent(graveyard.transform);
+                cardToSend.GetComponent<Transform>().position = new Vector3 (-251.8f,117.5f,0);
+            }
+        }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
     }
 
     public void AddToBuff()

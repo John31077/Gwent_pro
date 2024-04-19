@@ -10,6 +10,7 @@ public class InstantiatePrefabs : MonoBehaviour
     public GameObject InstWeatherCardPrefab;
     public DeckList deckList;
     public RealDeck CardsGameObject;
+    
 
     public void InstantiatePrefab()
     {
@@ -38,5 +39,9 @@ public class InstantiatePrefabs : MonoBehaviour
                 InstWeatherCardPrefab.transform.SetParent(CardsGameObject.transform);
             }
         }
-    }
+        ShuffleScript.Shuffle<GameObject>(CardsGameObject.Real_Cards);
+    }    
+    
 }
+
+

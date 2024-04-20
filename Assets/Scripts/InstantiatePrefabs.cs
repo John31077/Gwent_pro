@@ -8,6 +8,8 @@ public class InstantiatePrefabs : MonoBehaviour
     public GameObject InstUnitCardPrefab;
     public GameObject WeatherCardPrefab;
     public GameObject InstWeatherCardPrefab;
+    public GameObject HornOrFirePrefab;
+    public GameObject InstHornOrFirePrefab;
     public DeckList deckList;
     public RealDeck CardsGameObject;
     
@@ -27,7 +29,7 @@ public class InstantiatePrefabs : MonoBehaviour
                 CardsGameObject.Real_Cards.Add(InstUnitCardPrefab);
                 InstUnitCardPrefab.transform.SetParent(CardsGameObject.transform);
             }
-            if (card is WeatherCard)
+            else if (card is WeatherCard)
             {
                 InstWeatherCardPrefab = Instantiate(WeatherCardPrefab, new Vector3(-208f,-152f,0), Quaternion.identity);
                 InstWeatherCardPrefab.name = card.Tittle;
@@ -37,6 +39,17 @@ public class InstantiatePrefabs : MonoBehaviour
                 pref_WeatherCard.weatherCard = (WeatherCard)card;
                 CardsGameObject.Real_Cards.Add(InstWeatherCardPrefab);
                 InstWeatherCardPrefab.transform.SetParent(CardsGameObject.transform);
+            }
+            else if (card is Card)
+            {
+                InstHornOrFirePrefab = Instantiate(HornOrFirePrefab, new Vector3(-208f,-152f,0), Quaternion.identity);
+                InstHornOrFirePrefab.name = card.Tittle;
+                SpriteRenderer spriteRenderer = InstHornOrFirePrefab.GetComponent<SpriteRenderer>();
+                spriteRenderer.sprite = card.Image;
+                Pref_HornOrFireCard pref_HornOrFireCard= InstHornOrFirePrefab.GetComponent<Pref_HornOrFireCard>();
+                pref_HornOrFireCard.card = card; //Casteo redundante
+                CardsGameObject.Real_Cards.Add(InstHornOrFirePrefab);
+                InstHornOrFirePrefab.transform.SetParent(CardsGameObject.transform);
             }
         }
         ShuffleScript.Shuffle<GameObject>(CardsGameObject.Real_Cards);

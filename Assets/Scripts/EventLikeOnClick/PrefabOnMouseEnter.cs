@@ -26,6 +26,11 @@ public class PrefabOnMouseEnter : MonoBehaviour
             icon.GetComponent<SpriteRenderer>().sprite = card.GetComponent<SpriteRenderer>().sprite;
             text.GetComponent<TextMeshPro>().text = card.GetComponent<LeaderSection>().leader.Effect_description;
         }
-        
+        else if (card.GetComponent<Pref_HornOrFireCard>() != null)
+        {
+            icon.GetComponent<SpriteRenderer>().sprite = card.GetComponent<Pref_HornOrFireCard>().card.Image;
+            text.GetComponent<TextMeshPro>().text = card.GetComponent<Pref_HornOrFireCard>().card.Effect_description;
+        }
     }
 }
+ 

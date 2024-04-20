@@ -24,7 +24,27 @@ public class AddToList : MonoBehaviour
         }
     }
 
-    public static void AddToGraveyardOneCards(GameObject cardToSend, RealDeck origin)
+    public static void AddToGraveyarBuff(GameObject buffSection)
+    {
+        if (buffSection.transform.IsChildOf(GameObject.Find("Player1").transform))
+        {
+            RealDeck graveyard = GameObject.Find("Graveyard1").GetComponent<RealDeck>();
+            graveyard.GetComponent<RealDeck>().Real_Cards.Add(buffSection);
+            //buffSection = null;
+            buffSection.GetComponent<Transform>().SetParent(graveyard.transform);
+            buffSection.GetComponent<Transform>().position = new Vector3 (-251.8f,67,0);
+        }
+        if (buffSection.transform.IsChildOf(GameObject.Find("Player2").transform))
+        {
+            RealDeck graveyard = GameObject.Find("Graveyard2").GetComponent<RealDeck>();
+            graveyard.GetComponent<RealDeck>().Real_Cards.Add(buffSection);
+            //buffSection = null;
+            buffSection.GetComponent<Transform>().SetParent(graveyard.transform);
+            buffSection.GetComponent<Transform>().position = new Vector3 (-251.8f,117.5f,0);
+        }
+    }
+
+    public static void AddToGraveyardOneCards(GameObject cardToSend, RealDeck origin)//ATENCION: NO REMUEVE LA CARTA DE LA LISTA DE ORIGEN
     {
         if (cardToSend.transform.IsChildOf(GameObject.Find("Player1").transform))
         {
@@ -36,7 +56,7 @@ public class AddToList : MonoBehaviour
             else if (origin.Real_Cards.Contains(cardToSend))
             {
                 graveyard.GetComponent<RealDeck>().Real_Cards.Add(cardToSend);
-                origin.Real_Cards.Remove(cardToSend);
+                //origin.Real_Cards.Remove(cardToSend);
                 cardToSend.GetComponent<Transform>().SetParent(graveyard.transform);
                 cardToSend.GetComponent<Transform>().position = new Vector3 (-251.8f,67,0);
             }
@@ -51,38 +71,121 @@ public class AddToList : MonoBehaviour
             else if (origin.Real_Cards.Contains(cardToSend))
             {
                 graveyard.GetComponent<RealDeck>().Real_Cards.Add(cardToSend);
-                origin.Real_Cards.Remove(cardToSend);
+                //origin.Real_Cards.Remove(cardToSend);
                 cardToSend.GetComponent<Transform>().SetParent(graveyard.transform);
                 cardToSend.GetComponent<Transform>().position = new Vector3 (-251.8f,117.5f,0);
             }
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
+        }   
     }
 
-    public void AddToBuff()
+
+    public static void AddToGraveyardAllCards()// no sé si formatear el tablero o solamente limpiar las cartas
     {
+        RealDeck meleeSection1 = GameObject.Find("MeleeSection1").GetComponent<RealDeck>();
+        GameObject meleeHornSection1 = GameObject.Find("MeleeBuffSection1");
 
+        RealDeck rangeSection1 = GameObject.Find("RangeSection1").GetComponent<RealDeck>();
+        GameObject rangeHornSection1 = GameObject.Find("RangeBuffSection1");
+
+        RealDeck siegeSection1 = GameObject.Find("SiegeSection1").GetComponent<RealDeck>();
+        GameObject siegeHornSection1 = GameObject.Find("SiegeBuffSection1");
+
+        RealDeck meleeSection2 = GameObject.Find("MeleeSection2").GetComponent<RealDeck>();
+        GameObject meleeHornSection2 = GameObject.Find("MeleeBuffSection2");
+
+        RealDeck rangeSection2 = GameObject.Find("RangeSection2").GetComponent<RealDeck>();
+        GameObject rangeHornSection2 = GameObject.Find("RangeBuffSection2");
+
+        RealDeck siegeSection2 = GameObject.Find("SiegeSection2").GetComponent<RealDeck>();
+        GameObject siegeHornSection2 = GameObject.Find("SiegeBuffSection2");
+
+        /*if (meleeHornSection1 != null)
+        AddToGraveyarBuff(meleeHornSection1);
+        if (rangeHornSection1 != null)
+        AddToGraveyarBuff(rangeHornSection1);
+        if (siegeHornSection1 != null)
+        AddToGraveyarBuff(siegeHornSection1);
+        if (meleeHornSection2 != null)
+        AddToGraveyarBuff(meleeHornSection2);
+        if (rangeHornSection2 != null)
+        AddToGraveyarBuff(rangeHornSection2);
+        if (siegeHornSection2 != null)
+        AddToGraveyarBuff(siegeHornSection2);*/
+
+        if (meleeSection1.Real_Cards.Count != 0)
+        {    
+            foreach (GameObject card in meleeSection1.Real_Cards)
+            {
+                AddToGraveyardOneCards(card, meleeSection1);
+            }
+        }
+        if (rangeSection1.Real_Cards.Count != 0)
+        {    
+            foreach (GameObject card in rangeSection1.Real_Cards)
+            {
+                AddToGraveyardOneCards(card, rangeSection1);
+            }
+        }
+        if (siegeSection1.Real_Cards.Count != 0)
+        {    
+            foreach (GameObject card in siegeSection1.Real_Cards)
+            {
+                AddToGraveyardOneCards(card, siegeSection1);
+            }
+        }
+        if (meleeSection2.Real_Cards.Count != 0)
+        {    
+            foreach (GameObject card in meleeSection2.Real_Cards)
+            {
+                AddToGraveyardOneCards(card, meleeSection2);
+            }
+        }
+        if (rangeSection2.Real_Cards.Count != 0)
+        {    
+            foreach (GameObject card in rangeSection2.Real_Cards)
+            {
+                AddToGraveyardOneCards(card, rangeSection2);
+            }
+        }
+        if (siegeSection2.Real_Cards.Count != 0)
+        {    
+            foreach (GameObject card in siegeSection2.Real_Cards)
+            {
+                AddToGraveyardOneCards(card, siegeSection2);
+            }
+        }    
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public static void AddToMelee(GameObject cardToTranslate, RealDeck destination, RealDeck origin)
     {
         if (destination.Real_Cards.Contains(cardToTranslate))
         {
-            Debug.Log("La carta ya se encuentra en la sección Melee");
+            //Debug.Log("La carta ya se encuentra en la sección Melee");
+            AddToGraveyardAllCards();
         }
         else
         {

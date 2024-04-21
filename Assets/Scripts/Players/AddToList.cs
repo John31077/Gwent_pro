@@ -172,8 +172,7 @@ public class AddToList : MonoBehaviour //Recopilación de métodos que de una fo
     {      
         if (destination.Real_Cards.Contains(cardToTranslate))
         {
-            //Debug.Log("La carta ya se encuentra en la sección Melee");
-            AddToGraveyardAllCards();
+            return;
         }
         else
         {
@@ -189,11 +188,13 @@ public class AddToList : MonoBehaviour //Recopilación de métodos que de una fo
                     position1 = new Vector3(-285.799988f,75.5f,0);
                     Debug.Log(position1);
                     cardToTranslate.GetComponent<Transform>().position = position1;
+                    GameManager.playerTurn = !GameManager.playerTurn;
                 }
                 else
                 {
                     position1 = new Vector3(destination.Real_Cards[destination.Real_Cards.Count-2].GetComponent<Transform>().position.x-15.5709f,position1.y, 0);
                     cardToTranslate.GetComponent<Transform>().position = position1;
+                    GameManager.playerTurn = !GameManager.playerTurn;
                 }
             }
             else if (cardToTranslate.transform.IsChildOf(GameObject.Find("Player2").transform))
@@ -203,11 +204,13 @@ public class AddToList : MonoBehaviour //Recopilación de métodos que de una fo
                 {
                     position2 = new Vector3(-285.799988f,102.8f,0);
                     cardToTranslate.GetComponent<Transform>().position = position2;
+                    GameManager.playerTurn = !GameManager.playerTurn;
                 }
                 else
                 {
                     position2 = new Vector3(destination.Real_Cards[destination.Real_Cards.Count-2].GetComponent<Transform>().position.x-15.5709f,position2.y, 0);
                     cardToTranslate.GetComponent<Transform>().position = position2;
+                    GameManager.playerTurn = !GameManager.playerTurn;
                 }
             }
         }
@@ -216,7 +219,7 @@ public class AddToList : MonoBehaviour //Recopilación de métodos que de una fo
     {
         if (destination.Real_Cards.Contains(cardToTranslate))
         {
-            Debug.Log("La carta ya se encuentra en la sección Range");
+            return;
         }
         else
         {
@@ -231,11 +234,13 @@ public class AddToList : MonoBehaviour //Recopilación de métodos que de una fo
                 {
                     position1 = new Vector3(-285.799988f,48.5f,0);
                     cardToTranslate.GetComponent<Transform>().position = position1;
+                    GameManager.playerTurn = !GameManager.playerTurn;
                 }
                 else
                 {
                     position1 = new Vector3(destination.Real_Cards[destination.Real_Cards.Count-2].GetComponent<Transform>().position.x-15.5709f,position1.y, 0);
                     cardToTranslate.GetComponent<Transform>().position = position1;
+                    GameManager.playerTurn = !GameManager.playerTurn;
                 }
             }
             else if (cardToTranslate.transform.IsChildOf(GameObject.Find("Player2").transform))
@@ -245,11 +250,13 @@ public class AddToList : MonoBehaviour //Recopilación de métodos que de una fo
                 {
                     position2 = new Vector3(-285.799988f,128.8f,0);
                     cardToTranslate.GetComponent<Transform>().position = position2;
+                    GameManager.playerTurn = !GameManager.playerTurn;
                 }
                 else
                 {
                     position2 = new Vector3(destination.Real_Cards[destination.Real_Cards.Count-2].GetComponent<Transform>().position.x-15.5709f,position2.y, 0);
                     cardToTranslate.GetComponent<Transform>().position = position2;
+                    GameManager.playerTurn = !GameManager.playerTurn;
                 }
             }
         }
@@ -258,7 +265,7 @@ public class AddToList : MonoBehaviour //Recopilación de métodos que de una fo
     {
         if (destination.Real_Cards.Contains(cardToTranslate))
         {
-            Debug.Log("La carta ya se encuentra en la sección Siege");
+            return;
         }
         else
         {
@@ -273,11 +280,13 @@ public class AddToList : MonoBehaviour //Recopilación de métodos que de una fo
                 {
                     position1 = new Vector3(-285.799988f,22.5f,0);
                     cardToTranslate.GetComponent<Transform>().position = position1;
+                    GameManager.playerTurn = !GameManager.playerTurn;
                 }
                 else
                 {
                     position1 = new Vector3(destination.Real_Cards[destination.Real_Cards.Count-2].GetComponent<Transform>().position.x-15.5709f,position1.y, 0);
                     cardToTranslate.GetComponent<Transform>().position = position1;
+                    GameManager.playerTurn = !GameManager.playerTurn;
                 }
             }
             else if (cardToTranslate.transform.IsChildOf(GameObject.Find("Player2").transform))
@@ -287,11 +296,13 @@ public class AddToList : MonoBehaviour //Recopilación de métodos que de una fo
                 {
                     position2 = new Vector3(-285.799988f,155.8f,0);
                     cardToTranslate.GetComponent<Transform>().position = position2;
+                    GameManager.playerTurn = !GameManager.playerTurn;
                 }
                 else
                 {
                     position2 = new Vector3(destination.Real_Cards[destination.Real_Cards.Count-2].GetComponent<Transform>().position.x-15.5709f,position2.y, 0);
                     cardToTranslate.GetComponent<Transform>().position = position2;
+                    GameManager.playerTurn = !GameManager.playerTurn;
                 }
             }
         }
@@ -307,7 +318,7 @@ public class AddToList : MonoBehaviour //Recopilación de métodos que de una fo
                     if (GameObject.Find("Graveyard1").GetComponent<RealDeck>().Real_Cards.Contains(weatherCard))
                     {
                         //Evita que se vuelva a activar el efecto de la carta estando en el cementerio
-                        Debug.Log("Se evitó el efecto");
+                        return;
                     }
                     else
                     {
@@ -317,6 +328,7 @@ public class AddToList : MonoBehaviour //Recopilación de métodos que de una fo
                         Debug.Log("Se activó el efecto de Soleado");
                         GameObject card = hand1.Real_Cards.Find(x => x == weatherCard);
                         hand1.Real_Cards.Remove(card);
+                        GameManager.playerTurn = !GameManager.playerTurn;
                     }
                 }    
                 if (weatherCard.transform.IsChildOf(GameObject.Find("Player2").transform)) //Entra si el prefab es del jugador 2
@@ -325,7 +337,7 @@ public class AddToList : MonoBehaviour //Recopilación de métodos que de una fo
                     if (GameObject.Find("Graveyard2").GetComponent<RealDeck>().Real_Cards.Contains(weatherCard))
                     {
                         //Evita que se vuelva a activar el efecto de la carta estando en el cementerio
-                        Debug.Log("Se evitó el efecto");
+                        return;
                     }
                     else
                     {
@@ -335,6 +347,7 @@ public class AddToList : MonoBehaviour //Recopilación de métodos que de una fo
                         Debug.Log("Se activó el efecto de Soleado");
                         GameObject card = hand2.Real_Cards.Find(x => x == weatherCard);
                         hand2.Real_Cards.Remove(card);
+                        GameManager.playerTurn = !GameManager.playerTurn;
                     }
                 }
         }
@@ -359,12 +372,14 @@ public class AddToList : MonoBehaviour //Recopilación de métodos que de una fo
                     {
                         AddToGraveyardOneCards(weatherCard, GameObject.Find("Hand1").GetComponent<RealDeck>());
                         GameObject.Find("Hand1").GetComponent<RealDeck>().Real_Cards.Remove(weatherCard);
+                        GameManager.playerTurn = !GameManager.playerTurn;
                         return;
                     }
                     if (weatherCard.transform.IsChildOf(GameObject.Find("Player2").transform))
                     {
                         AddToGraveyardOneCards(weatherCard, GameObject.Find("Hand2").GetComponent<RealDeck>());
                         GameObject.Find("Hand2").GetComponent<RealDeck>().Real_Cards.Remove(weatherCard);
+                        GameManager.playerTurn = !GameManager.playerTurn;
                         return;
                     }
                 }
@@ -377,11 +392,13 @@ public class AddToList : MonoBehaviour //Recopilación de métodos que de una fo
             {
                 position = new Vector3(-518f,87.5f,0);
                 weatherCard.GetComponent<Transform>().position = position;
+                GameManager.playerTurn = !GameManager.playerTurn;
             }
             else
             {
                 position = new Vector3(weatherList.Real_Cards[weatherList.Real_Cards.Count-2].GetComponent<Transform>().position.x-15.5709f,position.y, 0);
                 weatherCard.GetComponent<Transform>().position = position;
+                GameManager.playerTurn = !GameManager.playerTurn;
             }
         }
     }

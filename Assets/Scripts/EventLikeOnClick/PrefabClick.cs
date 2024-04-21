@@ -8,6 +8,7 @@ using UnityEngine;
 public class PrefabClick : MonoBehaviour
 {
     public static GameObject cardGameObject; 
+    public static bool boolForHorn; //Solamente hace falta para que funcione bien el cambio de turno cuando se usa "Cuerno de Guerra"
     private void OnMouseDown()
     {
         cardGameObject = this.gameObject; //Se define la instancia especifica del prefab que contiene el botón.
@@ -84,6 +85,7 @@ public class PrefabClick : MonoBehaviour
                     GameObject selectionHornSection = pref_HornOrFireReference.GetComponent<BuffSection>().buffSection;
                     selectionHornSection.SetActive(true);
                     ColliderEditor colliderEditor = GameObject.Find("Canvas").GetComponent<ColliderEditor>();
+                    boolForHorn = true;
                     colliderEditor.DisableAllColliders();
                 }
             }
@@ -95,7 +97,6 @@ public class PrefabClick : MonoBehaviour
                     if (GameObject.Find("Graveyard1").GetComponent<RealDeck>().Real_Cards.Contains(cardGameObject))
                     {
                         //Evita que se vuelva a activar el efecto de la carta estando en el cementerio
-                        Debug.Log("Se evitó el efecto");
                     }
                     else
                     {
@@ -105,6 +106,7 @@ public class PrefabClick : MonoBehaviour
                         Debug.Log("Se activó el efecto de Fuego");
                         GameObject card = hand1.Real_Cards.Find(x => x == cardGameObject);
                         hand1.Real_Cards.Remove(card);
+                        GameManager.playerTurn = !GameManager.playerTurn;
                     }
                 }    
                 if (cardGameObject.transform.IsChildOf(GameObject.Find("Player2").transform)) //Entra si el prefab es del jugador 2
@@ -113,7 +115,6 @@ public class PrefabClick : MonoBehaviour
                     if (GameObject.Find("Graveyard2").GetComponent<RealDeck>().Real_Cards.Contains(cardGameObject))
                     {
                         //Evita que se vuelva a activar el efecto de la carta estando en el cementerio
-                        Debug.Log("Se evitó el efecto");
                     }
                     else
                     {
@@ -123,6 +124,7 @@ public class PrefabClick : MonoBehaviour
                         Debug.Log("Se activó el efecto de Fuego");
                         GameObject card = hand2.Real_Cards.Find(x => x == cardGameObject);
                         hand2.Real_Cards.Remove(card);
+                        GameManager.playerTurn = !GameManager.playerTurn;
                     }
                 }
 

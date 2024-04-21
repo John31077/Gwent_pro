@@ -4,5 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    
+    public bool life1 = true;
+    public bool life2 = true;
+    public bool hasPlayed;
 }

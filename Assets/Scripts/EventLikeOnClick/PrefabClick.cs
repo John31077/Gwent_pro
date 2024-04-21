@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using Unity.VisualScripting;
 using UnityEditor.AssetImporters;
 using UnityEngine;
 
 public class PrefabClick : MonoBehaviour
 {
-//quiero hacer que al pulsar la carta me la mande a la division correspondiente. (falta los aumentos y los climas)
-    public static GameObject cardGameObject;
+    public static GameObject cardGameObject; 
     private void OnMouseDown()
     {
         cardGameObject = this.gameObject; //Se define la instancia especifica del prefab que contiene el botón.
@@ -128,6 +128,15 @@ public class PrefabClick : MonoBehaviour
 
             }
         }
+        else if (cardGameObject.GetComponent<Pref_WeatherCard>() != null) //Entra si es una carta de clima
+        {
+
+            AddToList.AddToWeather(cardGameObject);
+            if (cardGameObject.GetComponent<Pref_WeatherCard>().weatherCard.Tittle != "Soleado")
+            {
+                Debug.Log("Se aplica el efecto de clima que no es soleado");
+            }
+        }
     }
     
     public void AddToHornSectionMelee() //Añade la carta Cuerno a la sección melee correspondiente
@@ -147,7 +156,7 @@ public class PrefabClick : MonoBehaviour
             RealDeck hand2 =  GameObject.Find("Hand2").GetComponent<RealDeck>();
             hornSection.hornCard = cardGameObject; //Añade la carta a la sección
             hand2.Real_Cards.Remove(cardGameObject); //Elimina la carta de la mano
-            cardGameObject.transform.SetParent(GameObject.Find("MeleeBuffSection1").transform);
+            cardGameObject.transform.SetParent(GameObject.Find("MeleeBuffSection2").transform);
             cardGameObject.GetComponent<Transform>().position = new Vector3(-435f,102.8f,0);
         }
     }
@@ -168,7 +177,7 @@ public class PrefabClick : MonoBehaviour
             RealDeck hand2 =  GameObject.Find("Hand2").GetComponent<RealDeck>();
             hornSection.hornCard = cardGameObject; //Añade la carta a la sección
             hand2.Real_Cards.Remove(cardGameObject); //Elimina la carta de la mano
-            cardGameObject.transform.SetParent(GameObject.Find("RangeBuffSection1").transform);
+            cardGameObject.transform.SetParent(GameObject.Find("RangeBuffSection2").transform);
             cardGameObject.GetComponent<Transform>().position = new Vector3(-435f,128.8f,0);
         }
     }
@@ -189,7 +198,7 @@ public class PrefabClick : MonoBehaviour
             RealDeck hand2 =  GameObject.Find("Hand2").GetComponent<RealDeck>();
             hornSection.hornCard = cardGameObject; //Añade la carta a la sección
             hand2.Real_Cards.Remove(cardGameObject); //Elimina la carta de la mano
-            cardGameObject.transform.SetParent(GameObject.Find("SiegeBuffSection1").transform);
+            cardGameObject.transform.SetParent(GameObject.Find("SiegeBuffSection2").transform);
             cardGameObject.GetComponent<Transform>().position = new Vector3(-435f,155.8f,0);
         }
     }

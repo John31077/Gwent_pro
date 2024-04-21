@@ -674,6 +674,7 @@ Transform:
   - {fileID: 153730511}
   - {fileID: 1720220621}
   - {fileID: 861286040}
+  - {fileID: 1929119977}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &120519266
@@ -8180,6 +8181,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b4db4b6d54971a949a2ce80bb725e3ff, type: 2}
   - {fileID: 11400000, guid: 776d169f4834bb54fae3d867c7270bc2, type: 2}
   - {fileID: 11400000, guid: ff12f70b8e4de9a408fbc65f8e2c0937, type: 2}
+  - {fileID: 11400000, guid: 59b598cb9da6f204e8df24b7da91a134, type: 2}
+  - {fileID: 11400000, guid: 189444b74133062449f9bd6de31d4511, type: 2}
+  - {fileID: 11400000, guid: 074db6a3cb392f04b8e5043f52b590ec, type: 2}
+  - {fileID: 11400000, guid: c2ad70effd75e3742975bb62e575a840, type: 2}
   Deck_Oblivion:
   - {fileID: 11400000, guid: e31c314f9ca912f458453082a431a319, type: 2}
   - {fileID: 11400000, guid: 5a6a73efb5336ac47b78d5342a570826, type: 2}
@@ -8219,6 +8224,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f002ca53d2da0a1408906fd403150f02, type: 2}
   - {fileID: 11400000, guid: 776d169f4834bb54fae3d867c7270bc2, type: 2}
   - {fileID: 11400000, guid: ff12f70b8e4de9a408fbc65f8e2c0937, type: 2}
+  - {fileID: 11400000, guid: 59b598cb9da6f204e8df24b7da91a134, type: 2}
+  - {fileID: 11400000, guid: 189444b74133062449f9bd6de31d4511, type: 2}
+  - {fileID: 11400000, guid: 074db6a3cb392f04b8e5043f52b590ec, type: 2}
+  - {fileID: 11400000, guid: c2ad70effd75e3742975bb62e575a840, type: 2}
   destinationP1: {fileID: 612858923}
   destinationP2: {fileID: 601003998}
   Pause: {fileID: 980444599}
@@ -8731,6 +8740,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1916618658}
   m_CullTransparentMesh: 1
+--- !u!1 &1929119976
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1929119977}
+  - component: {fileID: 1929119978}
+  m_Layer: 0
+  m_Name: WeatherSection
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1929119977
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929119976}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 114928537}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1929119978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929119976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c549ac9d1a0d4c4bb9ac245d5c2a28a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Real_Cards: []
 --- !u!1 &1958650338
 GameObject:
   m_ObjectHideFlags: 0

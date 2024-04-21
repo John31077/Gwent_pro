@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\EventLikeOnClick\PrefabClick.cs" />
+    <Compile Include="Assets\Scripts\TurnPass.cs" />
     <Compile Include="Assets\Scripts\Players\AddToList.cs" />
     <Compile Include="Assets\Scripts\Extras\ColliderEditor.cs" />
     <Compile Include="Assets\Scripts\Players\DeckList.cs" />
@@ -82,8 +83,8 @@
     <Compile Include="Assets\Scripts\Extras\BooleanExtra.cs" />
     <Compile Include="Assets\Scripts\Players\LeaderSection.cs" />
     <Compile Include="Assets\Scripts\PrefabScripts\Pref_WeatherCard.cs" />
-    <Compile Include="Assets\Scripts\Extras\BuffSection.cs" />
     <Compile Include="Assets\Scripts\Extras\ShuffleScript.cs" />
+    <Compile Include="Assets\Scripts\Extras\BuffSection.cs" />
     <Compile Include="Assets\Scripts\PrefabScripts\Pref_HornOrFireCard.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\Cards\Card.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\Cards\LeaderCard.cs" />

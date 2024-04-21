@@ -13,6 +13,8 @@ public class Begin : MonoBehaviour
     public DeckList destinationP1;
     public DeckList destinationP2;
     public GameObject Pause;
+    public GameObject passTurn1;
+    public GameObject passTurn2;
     public GameObject Opening;
     public GameObject warning;
     public GameObject deckSelection;
@@ -242,11 +244,12 @@ public class Begin : MonoBehaviour
         SpriteRenderer BoardSprite = OriginalBoard.GetComponent<SpriteRenderer>();
         BoardSprite.sprite = RusticBoard;
     }
-
     public void Continue3()
     {
         Opening.SetActive(false);
         Pause.SetActive(true);
+        passTurn1.SetActive(true);
+        passTurn2.SetActive(true);
         
     }
 

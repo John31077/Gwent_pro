@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class ColliderEditor : MonoBehaviour //Clase para desactivar y activar colliders
 {
-    private void ToggleColliders(bool isActive)
+    public static bool colliderSupport; //Permite que la pausa desactive todos los colliders sin que el metodo Update() los ponga al insatnte.
+    private static void ToggleColliders(bool isActive)
     {
+        colliderSupport = true;
         Collider[] colliders = FindObjectsOfType<Collider>();
 
         foreach (Collider collider in colliders)
@@ -18,6 +20,10 @@ public class ColliderEditor : MonoBehaviour //Clase para desactivar y activar co
     {
         ToggleColliders(false);
     }
+    public static void StaticDisableAllColliders()
+    {
+        ToggleColliders(false);
+    }
 
     public void EnableAllColliders()
     {
@@ -26,6 +32,7 @@ public class ColliderEditor : MonoBehaviour //Clase para desactivar y activar co
 
     public static void DisablePlayerCollider()
     {
+        colliderSupport = false;
         string fatherName;
         if (GameManager.playerTurn) fatherName = "Player1";
         else fatherName = "Player2";

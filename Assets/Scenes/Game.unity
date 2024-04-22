@@ -2196,6 +2196,22 @@ MonoBehaviour:
   hand2: {fileID: 264343626}
   lightGem: {fileID: 21300000, guid: 14f7f3ab5c4756042b4fa94155386680, type: 3}
   darkGem: {fileID: 21300000, guid: 7f991ed2c5b035f4f961c89af189d798, type: 3}
+  mBuffSection1: {fileID: 1001112251}
+  mCount1: {fileID: 190393224}
+  rBuffSection1: {fileID: 130040193}
+  rCount1: {fileID: 1072165921}
+  sBuffSection1: {fileID: 1850687229}
+  sCount1: {fileID: 1284552587}
+  mBuffSection2: {fileID: 757964369}
+  mCount2: {fileID: 1814310070}
+  rBuffSection2: {fileID: 677645973}
+  rCount2: {fileID: 625077114}
+  sBuffSection2: {fileID: 1070298951}
+  sCount2: {fileID: 1541399358}
+  rangeSection1: {fileID: 1783617054}
+  siegeSection1: {fileID: 1598242570}
+  rangeSection2: {fileID: 496619084}
+  siegeSection2: {fileID: 166859975}
 --- !u!114 &300551268
 MonoBehaviour:
   m_ObjectHideFlags: 0

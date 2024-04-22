@@ -70,9 +70,10 @@
     <Compile Include="Assets\Scripts\Begin.cs" />
     <Compile Include="Assets\Scripts\InitialMenu.cs" />
     <Compile Include="Assets\Scripts\InstantiatePrefabs.cs" />
-    <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\EventLikeOnClick\PrefabClick.cs" />
+    <Compile Include="Assets\Scripts\Effects.cs" />
+    <Compile Include="Assets\Scripts\Players\Player.cs" />
     <Compile Include="Assets\Scripts\TurnPass.cs" />
     <Compile Include="Assets\Scripts\Players\AddToList.cs" />
     <Compile Include="Assets\Scripts\Extras\ColliderEditor.cs" />

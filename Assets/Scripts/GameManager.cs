@@ -21,6 +21,30 @@ public class GameManager : MonoBehaviour
     public RealDeck hand2;
     public Sprite lightGem;
     public Sprite darkGem;
+
+
+
+    public GameObject mBuffSection1;
+    public GameObject mCount1;
+    public GameObject rBuffSection1;
+    public GameObject rCount1;
+    public GameObject sBuffSection1;
+    public GameObject sCount1;
+    public GameObject mBuffSection2;
+    public GameObject mCount2;
+    public GameObject rBuffSection2;
+    public GameObject rCount2;
+    public GameObject sBuffSection2;
+    public GameObject sCount2;
+
+
+
+    public GameObject rangeSection1;
+    public GameObject siegeSection1;
+    public GameObject rangeSection2;
+    public GameObject siegeSection2;
+
+    
     public void MyUpdate()
     {
         AddToList.AddToGraveyardAllCards();
@@ -31,12 +55,206 @@ public class GameManager : MonoBehaviour
         ColliderEditor.DisablePlayerCollider();
         ColliderEditor.EnablePlayerCollider();
     }
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    public  void HornEffect(GameObject buffSection, GameObject sectionCount)
+    {
+        int sectionAttack = 0;
+        if (buffSection.transform.IsChildOf(GameObject.Find("MeleeSection1").transform))
+        {  
+            RealDeck cardList = GameObject.Find("MeleeSection1").GetComponent<RealDeck>();
+            foreach (GameObject card in cardList.Real_Cards)
+            {
+                if (card.GetComponent<PreF_UnitCard>().unit_Card.LType == Level_type.Golden)
+                {
+                    sectionAttack += card.GetComponent<PreF_UnitCard>().unit_Card.Power;
+                }
+                else sectionAttack += 2 * card.GetComponent<PreF_UnitCard>().unit_Card.Power;
+            }
+            sectionCount.GetComponent<TextMeshPro>().text = sectionAttack.ToString();
+            int total = int.Parse(mCount1.GetComponent<TextMeshPro>().text) + int.Parse(rCount1.GetComponent<TextMeshPro>().text) + int.Parse(sCount1.GetComponent<TextMeshPro>().text);
+            totalCount1.GetComponent<TextMeshPro>().text = total.ToString();
+        }
+        if (buffSection.transform.IsChildOf(GameObject.Find("RangeSection1").transform))
+        {  
+            RealDeck cardList = GameObject.Find("RangeSection1").GetComponent<RealDeck>();
+            foreach (GameObject card in cardList.Real_Cards)
+            {
+                if (card.GetComponent<PreF_UnitCard>().unit_Card.LType == Level_type.Golden)
+                {
+                    sectionAttack += card.GetComponent<PreF_UnitCard>().unit_Card.Power;
+                }
+                else sectionAttack += 2 * card.GetComponent<PreF_UnitCard>().unit_Card.Power;
+            }
+            sectionCount.GetComponent<TextMeshPro>().text = sectionAttack.ToString();
+            int total = int.Parse(mCount1.GetComponent<TextMeshPro>().text) + int.Parse(rCount1.GetComponent<TextMeshPro>().text) + int.Parse(sCount1.GetComponent<TextMeshPro>().text);
+            totalCount1.GetComponent<TextMeshPro>().text = total.ToString();
 
-
-
+        }
+        if (buffSection.transform.IsChildOf(GameObject.Find("SiegeSection1").transform))
+        {  
+            RealDeck cardList = GameObject.Find("SiegeSection1").GetComponent<RealDeck>();
+            foreach (GameObject card in cardList.Real_Cards)
+            {
+                if (card.GetComponent<PreF_UnitCard>().unit_Card.LType == Level_type.Golden)
+                {
+                    sectionAttack += card.GetComponent<PreF_UnitCard>().unit_Card.Power;
+                }
+                else sectionAttack += 2 * card.GetComponent<PreF_UnitCard>().unit_Card.Power;
+            }
+            sectionCount.GetComponent<TextMeshPro>().text = sectionAttack.ToString();
+            int total = int.Parse(mCount1.GetComponent<TextMeshPro>().text) + int.Parse(rCount1.GetComponent<TextMeshPro>().text) + int.Parse(sCount1.GetComponent<TextMeshPro>().text);
+            totalCount1.GetComponent<TextMeshPro>().text = total.ToString();
+        }
+        if (buffSection.transform.IsChildOf(GameObject.Find("MeleeSection2").transform))
+        {  
+            RealDeck cardList = GameObject.Find("MeleeSection2").GetComponent<RealDeck>();
+            foreach (GameObject card in cardList.Real_Cards)
+            {
+                if (card.GetComponent<PreF_UnitCard>().unit_Card.LType == Level_type.Golden)
+                {
+                    sectionAttack += card.GetComponent<PreF_UnitCard>().unit_Card.Power;
+                }
+                else sectionAttack += 2 * card.GetComponent<PreF_UnitCard>().unit_Card.Power;
+            }
+            sectionCount.GetComponent<TextMeshPro>().text = sectionAttack.ToString();
+            int total = int.Parse(mCount2.GetComponent<TextMeshPro>().text) + int.Parse(rCount2.GetComponent<TextMeshPro>().text) + int.Parse(sCount2.GetComponent<TextMeshPro>().text);
+            totalCount2.GetComponent<TextMeshPro>().text = total.ToString();
+        }
+        if (buffSection.transform.IsChildOf(GameObject.Find("RangeSection2").transform))
+        {  
+            RealDeck cardList = GameObject.Find("RangeSection2").GetComponent<RealDeck>();
+            foreach (GameObject card in cardList.Real_Cards)
+            {
+                if (card.GetComponent<PreF_UnitCard>().unit_Card.LType == Level_type.Golden)
+                {
+                    sectionAttack += card.GetComponent<PreF_UnitCard>().unit_Card.Power;
+                }
+                else sectionAttack += 2 * card.GetComponent<PreF_UnitCard>().unit_Card.Power;
+            }
+            sectionCount.GetComponent<TextMeshPro>().text = sectionAttack.ToString();
+            int total = int.Parse(mCount2.GetComponent<TextMeshPro>().text) + int.Parse(rCount2.GetComponent<TextMeshPro>().text) + int.Parse(sCount2.GetComponent<TextMeshPro>().text);
+            totalCount2.GetComponent<TextMeshPro>().text = total.ToString();
+        }
+        if (buffSection.transform.IsChildOf(GameObject.Find("SiegeSection2").transform))
+        {  
+            RealDeck cardList = GameObject.Find("SiegeSection2").GetComponent<RealDeck>();
+            foreach (GameObject card in cardList.Real_Cards)
+            {
+                if (card.GetComponent<PreF_UnitCard>().unit_Card.LType == Level_type.Golden)
+                {
+                    sectionAttack += card.GetComponent<PreF_UnitCard>().unit_Card.Power;
+                }
+                else sectionAttack += 2 * card.GetComponent<PreF_UnitCard>().unit_Card.Power;
+            }
+            sectionCount.GetComponent<TextMeshPro>().text = sectionAttack.ToString();
+            int total = int.Parse(mCount2.GetComponent<TextMeshPro>().text) + int.Parse(rCount2.GetComponent<TextMeshPro>().text) + int.Parse(sCount2.GetComponent<TextMeshPro>().text);
+            totalCount2.GetComponent<TextMeshPro>().text = total.ToString();
+        }
+    }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     void Update()
-    {   
+    {
+
+
+        ///////////////////////////////////////////////////////////////////////////////////////
+        foreach (GameObject card in siegeSection1.GetComponent<RealDeck>().Real_Cards)
+        {
+            if (card.name == "General Tulio")
+            {
+                if (sBuffSection1.GetComponent<HornSection>().hornCard != null)
+                {
+                    //Se evita que se aplique dos veces el efecto de Horn
+                    break;
+                }
+                else
+                {
+                    HornEffect(sBuffSection1, sCount1);
+                    break;
+                }
+            }
+        }
+        foreach (GameObject card in siegeSection2.GetComponent<RealDeck>().Real_Cards)
+        {
+            if (card.name == "General Tulio")
+            {
+                if (sBuffSection2.GetComponent<HornSection>().hornCard != null)
+                {
+                    //Se evita que se aplique dos veces el efecto de Horn
+                    break;
+                }
+                else
+                {
+                    HornEffect(sBuffSection2, sCount2);
+                    break;
+                }
+            }
+        }
+        foreach (GameObject card in rangeSection1.GetComponent<RealDeck>().Real_Cards)
+        {
+            if (card.name == "Dagoth Ur")
+            {
+                if (rBuffSection1.GetComponent<HornSection>().hornCard != null)
+                {
+                    //Se evita que se aplique dos veces el efecto de Horn
+                    break;
+                }
+                else
+                {
+                    HornEffect(rBuffSection1, rCount1);
+                    break;
+                }
+            }
+        }
+        foreach (GameObject card in rangeSection2.GetComponent<RealDeck>().Real_Cards)
+        {
+            if (card.name == "Dagoth Ur")
+            {
+                if (rBuffSection2.GetComponent<HornSection>().hornCard != null)
+                {
+                    //Se evita que se aplique dos veces el efecto de Horn
+                    break;
+                }
+                else
+                {
+                    HornEffect(rBuffSection2, rCount2);
+                    break;
+                }
+            }
+        }
+        if (mBuffSection1.GetComponent<HornSection>().hornCard != null)
+        {
+            HornEffect(mBuffSection1, mCount1);
+        }
+        if (rBuffSection1.GetComponent<HornSection>().hornCard != null)
+        {
+            HornEffect(rBuffSection1, rCount1);
+        }
+        if (sBuffSection1.GetComponent<HornSection>().hornCard != null)
+        {
+            HornEffect(sBuffSection1,sCount1);
+        }
+        if (mBuffSection2.GetComponent<HornSection>().hornCard != null)
+        {
+            HornEffect(mBuffSection2, mCount2);
+        }
+        if (rBuffSection2.GetComponent<HornSection>().hornCard != null)
+        {
+            HornEffect(rBuffSection2, rCount2);
+        }
+        if (sBuffSection2.GetComponent<HornSection>().hornCard != null)
+        {
+            HornEffect(sBuffSection2, sCount2);
+        }
+        /////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
         if (player1.GetComponent<Player>().life2 == false && player2.GetComponent<Player>().life2 == false)
         {
             ColliderEditor.StaticDisableAllColliders();
@@ -182,6 +400,8 @@ public class GameManager : MonoBehaviour
                 hand2.Real_Cards.Remove(hand2.Real_Cards[hand2.Real_Cards.Count-1]);
             }
         }
+
+        
     }
 
 }

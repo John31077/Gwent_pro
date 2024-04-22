@@ -2188,10 +2188,12 @@ MonoBehaviour:
   totalCount1: {fileID: 1749808352}
   player1LifeGem1: {fileID: 1470075687}
   player1LifeGem2: {fileID: 252749461}
+  hand1: {fileID: 28831246}
   player2: {fileID: 861286039}
   totalCount2: {fileID: 1642095164}
   player2LifeGem1: {fileID: 1575890501}
   player2LifeGem2: {fileID: 971573162}
+  hand2: {fileID: 264343626}
   lightGem: {fileID: 21300000, guid: 14f7f3ab5c4756042b4fa94155386680, type: 3}
   darkGem: {fileID: 21300000, guid: 7f991ed2c5b035f4f961c89af189d798, type: 3}
 --- !u!114 &300551268

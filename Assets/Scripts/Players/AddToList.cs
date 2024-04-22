@@ -24,6 +24,37 @@ public class AddToList : MonoBehaviour //Recopilación de métodos que de una fo
             newPosition = new Vector3 (card.transform.position.x - 19.69f, card.transform.position.y, 0);
         }
     }
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    public static void AddToHand2Cards()
+    {
+        List<GameObject> deck1 = GameObject.Find("Deck_Real1").GetComponent<RealDeck>().Real_Cards;
+        List<GameObject> hand1 = GameObject.Find("Hand1").GetComponent<RealDeck>().Real_Cards;
+        Vector3 position1 = new Vector3(-274.299988f,-4.5999999f,0);
+        List<GameObject> temp1 = deck1.GetRange(0,2);
+        hand1.AddRange(temp1);
+        deck1.RemoveRange(0,2);
+        foreach (GameObject card in hand1)
+        {
+            card.transform.SetParent(GameObject.Find("Hand1").transform);
+            card.GetComponent<Transform>().position = position1;
+            position1 = new Vector3 (card.transform.position.x - 19.69f, card.transform.position.y, 0);
+        }
+
+        List<GameObject> deck2 = GameObject.Find("Deck_Real2").GetComponent<RealDeck>().Real_Cards;
+        List<GameObject> hand2 = GameObject.Find("Hand2").GetComponent<RealDeck>().Real_Cards;
+        Vector3 position2 = new Vector3(-274.299988f,180.289993f,0);
+        List<GameObject> temp2 = deck2.GetRange(0,2);
+        hand2.AddRange(temp2);
+        deck2.RemoveRange(0,2);
+        foreach (GameObject card in hand2)
+        {
+            card.transform.SetParent(GameObject.Find("Hand2").transform);
+            card.GetComponent<Transform>().position = position2;
+            position2 = new Vector3 (card.transform.position.x - 19.69f, card.transform.position.y, 0);
+        }
+    }
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     public static void AddToGraveyarBuff(GameObject buffSection)
     {
         if (buffSection.transform.IsChildOf(GameObject.Find("Player1").transform))

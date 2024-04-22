@@ -52,6 +52,10 @@ public class GameManager : MonoBehaviour
             ColliderEditor.StaticDisableAllColliders();
             Debug.Log("Ganó el jugador 1");
         }
+
+
+
+
         else if (player1.GetComponent<Player>().hasPassTurn && player2.GetComponent<Player>().hasPassTurn)
         {
             Debug.Log("Se acabó la ronda");
@@ -64,12 +68,16 @@ public class GameManager : MonoBehaviour
                 {
                     player2.GetComponent<Player>().life2 = false;
                     player2LifeGem2.GetComponent<SpriteRenderer>().sprite = darkGem;
+                    AddToList.AddToHand2Cards();
+                    playerTurn = false;
                     MyUpdate();
                 }
                 else
                 {
                     player2.GetComponent<Player>().life1 = false;
                     player2LifeGem1.GetComponent<SpriteRenderer>().sprite = darkGem;
+                    AddToList.AddToHand2Cards();
+                    playerTurn = false;
                     MyUpdate();
                 }
             }
@@ -79,12 +87,16 @@ public class GameManager : MonoBehaviour
                 {
                     player1.GetComponent<Player>().life2 = false;
                     player1LifeGem2.GetComponent<SpriteRenderer>().sprite = darkGem;
+                    AddToList.AddToHand2Cards();
+                    playerTurn = true;
                     MyUpdate();
                 }
                 else
                 {
                     player1.GetComponent<Player>().life1 = false;
                     player1LifeGem1.GetComponent<SpriteRenderer>().sprite = darkGem;
+                    AddToList.AddToHand2Cards();
+                    playerTurn = true;
                     MyUpdate();
                 }
             }
@@ -96,6 +108,7 @@ public class GameManager : MonoBehaviour
                     player1LifeGem1.GetComponent<SpriteRenderer>().sprite = darkGem;
                     player2.GetComponent<Player>().life1 = false;
                     player2LifeGem1.GetComponent<SpriteRenderer>().sprite = darkGem;
+                    AddToList.AddToHand2Cards();
                     MyUpdate();
                 }
                 else if (player1.GetComponent<Player>().life1 == false && player2.GetComponent<Player>().life1 == false)
@@ -104,6 +117,7 @@ public class GameManager : MonoBehaviour
                     player1LifeGem2.GetComponent<SpriteRenderer>().sprite = darkGem;
                     player2.GetComponent<Player>().life2 = false;
                     player2LifeGem2.GetComponent<SpriteRenderer>().sprite = darkGem;
+                    AddToList.AddToHand2Cards();
                     MyUpdate();
                 }
                 else if (player1.GetComponent<Player>().life1 && player2.GetComponent<Player>().life1 == false)
@@ -112,6 +126,7 @@ public class GameManager : MonoBehaviour
                     player1LifeGem1.GetComponent<SpriteRenderer>().sprite = darkGem;
                     player2.GetComponent<Player>().life2 = false;
                     player2LifeGem2.GetComponent<SpriteRenderer>().sprite = darkGem;
+                    AddToList.AddToHand2Cards();
                     MyUpdate();
                 }
                 else if (player1.GetComponent<Player>().life1 == false && player2.GetComponent<Player>().life1)
@@ -120,6 +135,7 @@ public class GameManager : MonoBehaviour
                     player1LifeGem2.GetComponent<SpriteRenderer>().sprite = darkGem;
                     player2.GetComponent<Player>().life1 = false;
                     player2LifeGem1.GetComponent<SpriteRenderer>().sprite = darkGem;
+                    AddToList.AddToHand2Cards();
                     MyUpdate();
                 }
             }
@@ -149,6 +165,21 @@ public class GameManager : MonoBehaviour
             {
                 ColliderEditor.DisablePlayerCollider();
                 ColliderEditor.EnablePlayerCollider();
+            }
+        }
+
+
+        if (hand1.Real_Cards.Count > 0 && hand2.Real_Cards.Count > 0)
+        {
+            if (hand1.Real_Cards.Count > 10)
+            {
+                AddToList.AddToGraveyardOneCards(hand1.Real_Cards[hand1.Real_Cards.Count-1], hand1);
+                hand1.Real_Cards.Remove(hand1.Real_Cards[hand1.Real_Cards.Count-1]);
+            }
+            if (hand2.Real_Cards.Count > 10)
+            {
+                AddToList.AddToGraveyardOneCards(hand2.Real_Cards[hand2.Real_Cards.Count-1], hand2);
+                hand2.Real_Cards.Remove(hand2.Real_Cards[hand2.Real_Cards.Count-1]);
             }
         }
     }

@@ -236,9 +236,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: ce620000
-      m_LastClickedID: 25294
-      m_ExpandedIDs: f0fafffff8610000
+      m_SelectedIDs: f81f0000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 1afbffffec6100000a6200001062000060620000d4620000026300006a630000c864000010650000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -658,9 +658,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -364.53287, y: 92.59018, z: -12.849251}
+    m_Target: {x: -343.89096, y: 94.52982, z: -12.72404}
     speed: 2
-    m_Value: {x: -364.53287, y: 92.59018, z: -12.849251}
+    m_Value: {x: -343.89096, y: 94.52982, z: -12.72404}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -710,9 +710,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 134.93712
+    m_Target: 125.98729
     speed: 2
-    m_Value: 134.93712
+    m_Value: 125.98729
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -809,7 +809,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Images
+    - Assets/Scripts/Extras
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -817,7 +817,7 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Images
+  - Assets/Scripts/Extras
   m_LastFoldersGridSize: -1
   m_LastProjectPath: "C:\\zPC\\Programacion\\Nuevo A\xF1o\\Proyecto Gwent\\Proyecto
     1\\Gwent 1"
@@ -825,9 +825,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 2e670000
-    m_LastClickedID: 26414
-    m_ExpandedIDs: 000000001a6700001c6700001e670000
+    m_SelectedIDs: 5c670000
+    m_LastClickedID: 26460
+    m_ExpandedIDs: 00000000406700004267000044670000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -855,7 +855,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000001a6700001c6700001e670000
+    m_ExpandedIDs: 00000000406700004267000044670000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -880,9 +880,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: ce620000
-    m_LastClickedInstanceID: 25294
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: f81f0000
+    m_LastClickedInstanceID: 8184
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

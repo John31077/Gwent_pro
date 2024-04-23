@@ -62,7 +62,45 @@ public class PrefabClick : MonoBehaviour
         }
         else if (cardGameObject.GetComponent<LeaderSection>() != null) //Entra si el prefab es una carta líder
         {
-            Debug.Log("Se aplica el efecto");//Tiene que aplicar el efecto
+            if (cardGameObject.transform.IsChildOf(GameObject.Find("Player1").transform))
+            {
+                if (cardGameObject.GetComponent<LeaderSection>().leader.Tittle == "Rey Emeric" && GameObject.Find("Player1").GetComponent<Player>().leaderEffect == false)
+                {
+                    if (GameObject.Find("WeatherSection").GetComponent<RealDeck>().Real_Cards.Count == 0)
+                    {
+                        //No aplica el efecto el lider si no hay cartas en la seccion de clima.
+                    }
+                    else
+                    {
+                        AddToList.SunnyEffect();
+                        GameObject.Find("Player1").GetComponent<Player>().leaderEffect = true;
+                        GameObject.Find("Player1").GetComponent<Player>().leaderEffect = true;
+                        GameManager.playerTurn = !GameManager.playerTurn;
+                        Debug.Log(GameManager.playerTurn);
+                    }
+
+                }
+            }
+            if (cardGameObject.transform.IsChildOf(GameObject.Find("Player2").transform))
+            {
+                if (cardGameObject.GetComponent<LeaderSection>().leader.Tittle == "Rey Emeric" && GameObject.Find("Player2").GetComponent<Player>().leaderEffect == false)
+                {
+                    
+                    if (GameObject.Find("WeatherSection").GetComponent<RealDeck>().Real_Cards.Count == 0)
+                    {
+                        //No aplica el efecto el lider si no hay cartas en la seccion de clima.
+                    }
+                    else
+                    {
+                        AddToList.SunnyEffect();
+                        GameObject.Find("Player2").GetComponent<Player>().leaderEffect = true;
+                        GameObject.Find("Player2").GetComponent<Player>().leaderEffect = true;
+                        GameManager.playerTurn = !GameManager.playerTurn;
+                        Debug.Log(GameManager.playerTurn);
+                        
+                    }
+                }
+            }
         }
         else if (cardGameObject.GetComponent<Pref_HornOrFireCard>() != null) //Entra si el prefab es una carta de Cuerno o Fuego
         {
@@ -103,6 +141,7 @@ public class PrefabClick : MonoBehaviour
                         //Se envía al cementerio aplicando su efecto (no tiene sentido colocarse en el campo para después al instante quitarla)
                         AddToList.AddToGraveyardOneCards(cardGameObject, hand1);
                         //Aplica el efecto
+                        AddToList.Burn();
                         Debug.Log("Se activó el efecto de Fuego");
                         GameObject card = hand1.Real_Cards.Find(x => x == cardGameObject);
                         hand1.Real_Cards.Remove(card);
@@ -121,6 +160,7 @@ public class PrefabClick : MonoBehaviour
                         //Se envía al cementerio aplicando su efecto (no tiene sentido colocarse en el campo para después al instante quitarla)
                         AddToList.AddToGraveyardOneCards(cardGameObject, hand2);
                         //Aplica el efecto
+                        AddToList.Burn();
                         Debug.Log("Se activó el efecto de Fuego");
                         GameObject card = hand2.Real_Cards.Find(x => x == cardGameObject);
                         hand2.Real_Cards.Remove(card);
@@ -134,10 +174,6 @@ public class PrefabClick : MonoBehaviour
         {
 
             AddToList.AddToWeather(cardGameObject);
-            if (cardGameObject.GetComponent<Pref_WeatherCard>().weatherCard.Tittle != "Soleado")
-            {
-                Debug.Log("Se aplica el efecto de clima que no es soleado");
-            }
         }
     }
     

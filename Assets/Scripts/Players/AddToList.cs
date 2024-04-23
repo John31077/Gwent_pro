@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Analytics;
 using UnityEngine.UIElements;
 
-public class AddToList : MonoBehaviour //Recopilación de métodos que de una forma u otra añaden cartas a determinados lugares
+public class AddToList : MonoBehaviour //Recopilación de métodos que de una forma u otra añaden cartas a determinados lugares. También contiene algunos efectos de cartas.
 {
     public RealDeck Deck;
     public RealDeck Destination;
@@ -207,6 +207,14 @@ public class AddToList : MonoBehaviour //Recopilación de métodos que de una fo
         }
         else
         {
+            if (cardToTranslate.GetComponent<PreF_UnitCard>().unit_Card.Efect == eEfect.Burn)
+            {
+                Burn();
+            }
+            if (cardToTranslate.GetComponent<PreF_UnitCard>().unit_Card.Efect == eEfect.little_Burn)
+            {
+                LittleBurn(cardToTranslate);
+            }
             Vector3 position1 = new Vector3(-285.799988f,75.5f,0);
             Vector3 position2 = new Vector3(-285.799988f,102.8f,0);
             destination.Real_Cards.Add(cardToTranslate);
@@ -217,7 +225,6 @@ public class AddToList : MonoBehaviour //Recopilación de métodos que de una fo
                 if (destination.Real_Cards.Count == 1)
                 {
                     position1 = new Vector3(-285.799988f,75.5f,0);
-                    Debug.Log(position1);
                     cardToTranslate.GetComponent<Transform>().position = position1;
                     GameManager.playerTurn = !GameManager.playerTurn;
                 }
@@ -254,6 +261,15 @@ public class AddToList : MonoBehaviour //Recopilación de métodos que de una fo
         }
         else
         {
+            if (cardToTranslate.GetComponent<PreF_UnitCard>().unit_Card.Efect == eEfect.Burn)
+            {
+                Burn();
+            }
+            if (cardToTranslate.GetComponent<PreF_UnitCard>().unit_Card.Efect == eEfect.little_Burn)
+            {
+
+                LittleBurn(cardToTranslate);
+            }
             destination.Real_Cards.Add(cardToTranslate);
             origin.Real_Cards.Remove(cardToTranslate);
             Vector3 position1 = new Vector3(-285.799988f,48.5f,0);
@@ -300,6 +316,14 @@ public class AddToList : MonoBehaviour //Recopilación de métodos que de una fo
         }
         else
         {
+            if (cardToTranslate.GetComponent<PreF_UnitCard>().unit_Card.Efect == eEfect.Burn)
+            {
+                Burn();
+            }
+            if (cardToTranslate.GetComponent<PreF_UnitCard>().unit_Card.Efect == eEfect.little_Burn)
+            {
+                LittleBurn(cardToTranslate);
+            }
             destination.Real_Cards.Add(cardToTranslate);
             origin.Real_Cards.Remove(cardToTranslate);
             Vector3 position1 = new Vector3(-285.799988f,22.5f,0);
@@ -356,7 +380,7 @@ public class AddToList : MonoBehaviour //Recopilación de métodos que de una fo
                         //Se envía al cementerio aplicando su efecto (no tiene sentido colocarse en la sección de clima para después al instante quitarla)
                         AddToGraveyardOneCards(weatherCard, hand1);
                         //Aplica el efecto
-                        Debug.Log("Se activó el efecto de Soleado");
+                        SunnyEffect();
                         GameObject card = hand1.Real_Cards.Find(x => x == weatherCard);
                         hand1.Real_Cards.Remove(card);
                         GameManager.playerTurn = !GameManager.playerTurn;
@@ -375,7 +399,7 @@ public class AddToList : MonoBehaviour //Recopilación de métodos que de una fo
                         //Se envía al cementerio aplicando su efecto (no tiene sentido colocarse en la sección de clima para después al instante quitarla)
                         AddToGraveyardOneCards(weatherCard, hand2);
                         //Aplica el efecto
-                        Debug.Log("Se activó el efecto de Soleado");
+                        SunnyEffect();
                         GameObject card = hand2.Real_Cards.Find(x => x == weatherCard);
                         hand2.Real_Cards.Remove(card);
                         GameManager.playerTurn = !GameManager.playerTurn;
@@ -432,5 +456,334 @@ public class AddToList : MonoBehaviour //Recopilación de métodos que de una fo
                 GameManager.playerTurn = !GameManager.playerTurn;
             }
         }
+    }
+
+    public static void SunnyEffect()
+    {
+        RealDeck weatherSection = GameObject.Find("WeatherSection").GetComponent<RealDeck>();
+        if (weatherSection.Real_Cards.Count != 0)
+        {
+
+            foreach (GameObject weatherCard in weatherSection.Real_Cards)
+            {
+                AddToGraveyardOneCards(weatherCard, weatherSection);
+            }
+            weatherSection.Real_Cards.Clear();
+        }
+    }
+
+    public static void Burn()
+    {
+        RealDeck mSection1 = GameObject.Find("MeleeSection1").GetComponent<RealDeck>();
+        RealDeck rSection1 = GameObject.Find("RangeSection1").GetComponent<RealDeck>();
+        RealDeck sSection1 = GameObject.Find("SiegeSection1").GetComponent<RealDeck>();
+        RealDeck mSection2 = GameObject.Find("MeleeSection2").GetComponent<RealDeck>();
+        RealDeck rSection2 = GameObject.Find("RangeSection2").GetComponent<RealDeck>();
+        RealDeck sSection2 = GameObject.Find("SiegeSection2").GetComponent<RealDeck>();
+
+        int[] attackList = new int[]{0,0,0,0,0,0};
+        //Abajo se encuentra todos los valores de ataque máximos de cada fila sin contar cartas de Héroe
+        attackList[0] = GetMaxValue(attackList[0], mSection1.GetComponent<RealDeck>().Real_Cards);
+        attackList[1] = GetMaxValue(attackList[1], rSection1.GetComponent<RealDeck>().Real_Cards);
+        attackList[2] = GetMaxValue(attackList[2], sSection1.GetComponent<RealDeck>().Real_Cards);
+        attackList[3] = GetMaxValue(attackList[3], mSection2.GetComponent<RealDeck>().Real_Cards);
+        attackList[4] = GetMaxValue(attackList[4], rSection2.GetComponent<RealDeck>().Real_Cards);
+        attackList[5] = GetMaxValue(attackList[5], sSection2.GetComponent<RealDeck>().Real_Cards);
+
+        int MaxPower = 0; //Aquí se reserva el mayor ataque del campo
+
+        for (int i = 0; i < attackList.Length; i++) //Consigue el mayor ataque del campo sin contar cartas de Héroe
+        {
+            if (attackList[i] > MaxPower)
+            {
+                MaxPower = attackList[i];
+            }
+        }
+
+        if (mSection1.Real_Cards.Count != 0)
+        {   List<string> objectsName = new List<string>();
+            foreach (GameObject card in mSection1.Real_Cards)
+            {
+                if (card.GetComponent<PreF_UnitCard>().unit_Card.Power == MaxPower && card.GetComponent<PreF_UnitCard>().unit_Card.LType != Level_type.Golden)
+                {
+                    AddToGraveyardOneCards(card, mSection1);
+                    objectsName.Add(card.name);
+                }
+            }
+            foreach (string name in objectsName)
+            {
+                mSection1.Real_Cards.Remove(GameObject.Find(name));
+            }
+        }
+        if (rSection1.Real_Cards.Count != 0)
+        {   List<string> objectsName = new List<string>();
+            foreach (GameObject card in rSection1.Real_Cards)
+            {
+                if (card.GetComponent<PreF_UnitCard>().unit_Card.Power == MaxPower && card.GetComponent<PreF_UnitCard>().unit_Card.LType != Level_type.Golden)
+                {
+                    AddToGraveyardOneCards(card, rSection1);
+                    objectsName.Add(card.name);
+                }
+            }
+            foreach (string name in objectsName)
+            {
+                rSection1.Real_Cards.Remove(GameObject.Find(name));
+            }
+        }
+        if (sSection1.Real_Cards.Count != 0)
+        {   List<string> objectsName = new List<string>();
+            foreach (GameObject card in sSection1.Real_Cards)
+            {
+                if (card.GetComponent<PreF_UnitCard>().unit_Card.Power == MaxPower && card.GetComponent<PreF_UnitCard>().unit_Card.LType != Level_type.Golden)
+                {
+                    AddToGraveyardOneCards(card, sSection1);
+                    objectsName.Add(card.name);
+                }
+            }
+            foreach (string name in objectsName)
+            {
+                sSection1.Real_Cards.Remove(GameObject.Find(name));
+            }
+        }
+        if (mSection2.Real_Cards.Count != 0)
+        {   List<string> objectsName = new List<string>();
+            foreach (GameObject card in mSection2.Real_Cards)
+            {
+                if (card.GetComponent<PreF_UnitCard>().unit_Card.Power == MaxPower && card.GetComponent<PreF_UnitCard>().unit_Card.LType != Level_type.Golden)
+                {
+                    AddToGraveyardOneCards(card, mSection2);
+                    objectsName.Add(card.name);
+                }
+            }
+            foreach (string name in objectsName)
+            {
+                mSection2.Real_Cards.Remove(GameObject.Find(name));
+            }
+        }
+        if (rSection2.Real_Cards.Count != 0)
+        {   List<string> objectsName = new List<string>();
+            foreach (GameObject card in rSection2.Real_Cards)
+            {
+                if (card.GetComponent<PreF_UnitCard>().unit_Card.Power == MaxPower && card.GetComponent<PreF_UnitCard>().unit_Card.LType != Level_type.Golden)
+                {
+                    AddToGraveyardOneCards(card, rSection2);
+                    objectsName.Add(card.name);
+                }
+            }
+            foreach (string name in objectsName)
+            {
+                rSection2.Real_Cards.Remove(GameObject.Find(name));
+            }
+        }
+        if (sSection2.Real_Cards.Count != 0)
+        {   List<string> objectsName = new List<string>();
+            foreach (GameObject card in sSection2.Real_Cards)
+            {
+                if (card.GetComponent<PreF_UnitCard>().unit_Card.Power == MaxPower && card.GetComponent<PreF_UnitCard>().unit_Card.LType != Level_type.Golden)
+                {
+                    AddToGraveyardOneCards(card, sSection2);
+                    objectsName.Add(card.name);
+                }
+            }
+            foreach (string name in objectsName)
+            {
+                sSection2.Real_Cards.Remove(GameObject.Find(name));
+            }
+        }
+    }
+
+
+
+
+
+
+    public static void LittleBurn(GameObject Card)
+    {
+        if (Card.transform.IsChildOf(GameObject.Find("Player1").transform))
+        {
+            RealDeck mSection2 = GameObject.Find("MeleeSection2").GetComponent<RealDeck>();
+            RealDeck rSection2 = GameObject.Find("RangeSection2").GetComponent<RealDeck>();
+            RealDeck sSection2 = GameObject.Find("SiegeSection2").GetComponent<RealDeck>();
+            int[] attackList = new int[]{int.MaxValue,int.MaxValue,int.MaxValue};
+            //Abajo se encuentra todos los valores de ataque mínimos de cada fila sin contar cartas de Héroe
+            attackList[0] = GetMinValue(attackList[3], mSection2.GetComponent<RealDeck>().Real_Cards);
+            attackList[1] = GetMinValue(attackList[4], rSection2.GetComponent<RealDeck>().Real_Cards);
+            attackList[2] = GetMinValue(attackList[5], sSection2.GetComponent<RealDeck>().Real_Cards);
+            
+            int MinPower = int.MaxValue; //Aquí se reserva el menor ataque del campo
+
+            for (int i = 0; i < attackList.Length; i++) //Consigue el menor ataque del campo sin contar cartas de Héroe
+            {
+                if (attackList[i] < MinPower && attackList[i] != 0)
+                {
+                    MinPower = attackList[i];
+                }
+            }
+
+            if (mSection2.Real_Cards.Count != 0)
+            {   
+                List<string> objectsName = new List<string>();
+                foreach (GameObject card in mSection2.Real_Cards)
+                {
+                    if (card.GetComponent<PreF_UnitCard>().unit_Card.Power == MinPower && card.GetComponent<PreF_UnitCard>().unit_Card.LType != Level_type.Golden)
+                    {
+                        AddToGraveyardOneCards(card, mSection2);
+                        objectsName.Add(card.name);
+                    }
+                }
+                foreach (string name in objectsName)
+                {
+                    mSection2.Real_Cards.Remove(GameObject.Find(name));
+                }
+            }
+            if (rSection2.Real_Cards.Count != 0)
+            {   
+                List<string> objectsName = new List<string>();
+                foreach (GameObject card in rSection2.Real_Cards)
+                {
+                    if (card.GetComponent<PreF_UnitCard>().unit_Card.Power == MinPower && card.GetComponent<PreF_UnitCard>().unit_Card.LType != Level_type.Golden)
+                    {
+                        AddToGraveyardOneCards(card, rSection2);
+                        objectsName.Add(card.name);
+                    }
+                }
+                foreach (string name in objectsName)
+                {
+                    rSection2.Real_Cards.Remove(GameObject.Find(name));
+                }
+            }
+            if (sSection2.Real_Cards.Count != 0)
+            {   
+                List<string> objectsName = new List<string>();
+                foreach (GameObject card in sSection2.Real_Cards)
+                {
+                    if (card.GetComponent<PreF_UnitCard>().unit_Card.Power == MinPower && card.GetComponent<PreF_UnitCard>().unit_Card.LType != Level_type.Golden)
+                    {
+                        AddToGraveyardOneCards(card, sSection2);
+                        objectsName.Add(card.name);
+                    }
+                }
+                foreach (string name in objectsName)
+                {
+                    sSection2.Real_Cards.Remove(GameObject.Find(name));
+                }
+            }
+
+            
+        }
+        if (Card.transform.IsChildOf(GameObject.Find("Player2").transform))
+        {
+            
+            RealDeck mSection1 = GameObject.Find("MeleeSection1").GetComponent<RealDeck>();
+            RealDeck rSection1 = GameObject.Find("RangeSection1").GetComponent<RealDeck>();
+            RealDeck sSection1 = GameObject.Find("SiegeSection1").GetComponent<RealDeck>();
+            int[] attackList = new int[]{int.MaxValue,int.MaxValue,int.MaxValue};
+            //Abajo se encuentra todos los valores de ataque mínimos de cada fila sin contar cartas de Héroe
+            
+            attackList[0] = GetMinValue(attackList[0], mSection1.GetComponent<RealDeck>().Real_Cards);
+            attackList[1] = GetMinValue(attackList[1], rSection1.GetComponent<RealDeck>().Real_Cards);
+            attackList[2] = GetMinValue(attackList[2], sSection1.GetComponent<RealDeck>().Real_Cards);
+
+            int MinPower = int.MaxValue; //Aquí se reserva el menor ataque del campo
+
+            for (int i = 0; i < attackList.Length; i++) //Consigue el menor ataque del campo sin contar cartas de Héroe
+            {
+                if (attackList[i] < MinPower && attackList[i] != 0)
+                {
+                    MinPower = attackList[i];
+                }
+            }
+            if (mSection1.Real_Cards.Count != 0)
+            {   
+                List<string> objectsName = new List<string>();
+                foreach (GameObject card in mSection1.Real_Cards)
+                {
+                    if (card.GetComponent<PreF_UnitCard>().unit_Card.Power == MinPower && card.GetComponent<PreF_UnitCard>().unit_Card.LType != Level_type.Golden)
+                    {
+                        AddToGraveyardOneCards(card, mSection1);
+                        objectsName.Add(card.name);
+                    }
+                }
+                foreach (string name in objectsName)
+                {
+                    mSection1.Real_Cards.Remove(GameObject.Find(name));
+                }
+            }
+            if (rSection1.Real_Cards.Count != 0)
+            {   
+                List<string> objectsName = new List<string>();
+                foreach (GameObject card in rSection1.Real_Cards)
+                {
+                    if (card.GetComponent<PreF_UnitCard>().unit_Card.Power == MinPower && card.GetComponent<PreF_UnitCard>().unit_Card.LType != Level_type.Golden)
+                    {
+                        AddToGraveyardOneCards(card, rSection1);
+                        objectsName.Add(card.name);
+                    }
+                }
+                foreach (string name in objectsName)
+                {
+                    rSection1.Real_Cards.Remove(GameObject.Find(name));
+                }
+            }
+            if (sSection1.Real_Cards.Count != 0)
+            {   
+                List<string> objectsName = new List<string>();
+                foreach (GameObject card in sSection1.Real_Cards)
+                {
+                    if (card.GetComponent<PreF_UnitCard>().unit_Card.Power == MinPower && card.GetComponent<PreF_UnitCard>().unit_Card.LType != Level_type.Golden)
+                    {
+                        AddToGraveyardOneCards(card, sSection1);
+                        objectsName.Add(card.name);
+                    }
+                }
+                foreach (string name in objectsName)
+                {   
+                    sSection1.Real_Cards.Remove(GameObject.Find(name));
+                }
+            }
+        }     
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public static int GetMaxValue(int receptor, List<GameObject> section)
+    {
+        foreach (GameObject card in section)
+        {
+            if (card.GetComponent<PreF_UnitCard>().unit_Card.Power > receptor && card.GetComponent<PreF_UnitCard>().unit_Card.LType != Level_type.Golden)
+            {
+                receptor = card.GetComponent<PreF_UnitCard>().unit_Card.Power;
+            }
+        }
+        return receptor;
+    }
+    public static int GetMinValue(int receptor, List<GameObject> section)
+    {
+        if (section.Count != 0)
+        {
+            foreach (GameObject card in section)
+            {
+                if (card.GetComponent<PreF_UnitCard>().unit_Card.Power < receptor && card.GetComponent<PreF_UnitCard>().unit_Card.LType != Level_type.Golden)
+                {
+                    receptor = card.GetComponent<PreF_UnitCard>().unit_Card.Power;
+                }
+            }
+            return receptor;
+        }
+        receptor = 0;
+        return receptor;
     }
 }

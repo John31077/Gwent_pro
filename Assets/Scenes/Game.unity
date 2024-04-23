@@ -2208,10 +2208,13 @@ MonoBehaviour:
   rCount2: {fileID: 625077114}
   sBuffSection2: {fileID: 1070298951}
   sCount2: {fileID: 1541399358}
+  meleeSection1: {fileID: 2053176124}
+  meleeSection2: {fileID: 1533284677}
   rangeSection1: {fileID: 1783617054}
   siegeSection1: {fileID: 1598242570}
   rangeSection2: {fileID: 496619084}
   siegeSection2: {fileID: 166859975}
+  weatherSection: {fileID: 1929119976}
 --- !u!114 &300551268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5287,14 +5290,14 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 601003997}
-  - {fileID: 1255385525}
   - {fileID: 669715641}
-  - {fileID: 1958650339}
-  - {fileID: 264343624}
   - {fileID: 1533284678}
   - {fileID: 496619085}
   - {fileID: 166859976}
+  - {fileID: 601003997}
+  - {fileID: 1255385525}
+  - {fileID: 1958650339}
+  - {fileID: 264343624}
   - {fileID: 1642095165}
   m_Father: {fileID: 114928537}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5312,6 +5315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life1: 1
   life2: 1
+  leaderEffect: 0
   hasPassTurn: 0
   hasPlayed: 0
 --- !u!1 &916321206
@@ -10353,14 +10357,14 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 612858924}
-  - {fileID: 916321207}
   - {fileID: 1642712217}
-  - {fileID: 607620196}
-  - {fileID: 28831244}
   - {fileID: 2053176125}
   - {fileID: 1783617055}
   - {fileID: 1598242571}
+  - {fileID: 612858924}
+  - {fileID: 916321207}
+  - {fileID: 607620196}
+  - {fileID: 28831244}
   - {fileID: 1749808353}
   m_Father: {fileID: 114928537}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10378,6 +10382,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life1: 1
   life2: 1
+  leaderEffect: 0
   hasPassTurn: 0
   hasPlayed: 0
 --- !u!1 &1740125849

@@ -38,11 +38,15 @@ public class GameManager : MonoBehaviour
     public GameObject sCount2;
 
 
+    public GameObject meleeSection1;
+    public GameObject meleeSection2;
 
     public GameObject rangeSection1;
     public GameObject siegeSection1;
     public GameObject rangeSection2;
     public GameObject siegeSection2;
+
+    public GameObject weatherSection;
 
     
     public void MyUpdate()
@@ -152,10 +156,163 @@ public class GameManager : MonoBehaviour
         }
     }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    public void WheatherEffect() //Efecto para los climas distintos de "soleado"
+    {
+        if (weatherSection.GetComponent<RealDeck>().Real_Cards.Count != 0)
+        {
+            foreach (GameObject card in weatherSection.GetComponent<RealDeck>().Real_Cards)
+            {
+                if (card.name == "Escarcha")
+                {
+                    int attackMelee1 = 0;
+                    int attackMelee2 = 0;
+                    int count1 = 0;
+                    int count2 = 0;
+                    foreach (GameObject meleeCard in meleeSection1.GetComponent<RealDeck>().Real_Cards)
+                    {
+                        if (meleeCard.GetComponent<PreF_UnitCard>().unit_Card.LType == Level_type.Golden)
+                        {
+                            attackMelee1 += meleeCard.GetComponent<PreF_UnitCard>().unit_Card.Power;
+                        }
+                        else
+                        {
+                            count1++;
+                        }
+                    }
+                    attackMelee1 += count1;
+                    mCount1.GetComponent<TextMeshPro>().text = attackMelee1.ToString();
+                    int total1 = int.Parse(mCount1.GetComponent<TextMeshPro>().text) + int.Parse(rCount1.GetComponent<TextMeshPro>().text) + int.Parse(sCount1.GetComponent<TextMeshPro>().text);
+                    totalCount1.GetComponent<TextMeshPro>().text = total1.ToString();
 
+                    foreach (GameObject meleeCard in meleeSection2.GetComponent<RealDeck>().Real_Cards)
+                    {
+                        if (meleeCard.GetComponent<PreF_UnitCard>().unit_Card.LType == Level_type.Golden)
+                        {
+                            attackMelee2 += meleeCard.GetComponent<PreF_UnitCard>().unit_Card.Power;
+                        }
+                        else
+                        {
+                            count2++;
+                        }
+                    }
+                    attackMelee2 += count2;
+                    mCount2.GetComponent<TextMeshPro>().text = attackMelee2.ToString();
+                    int total2 = int.Parse(mCount2.GetComponent<TextMeshPro>().text) + int.Parse(rCount2.GetComponent<TextMeshPro>().text) + int.Parse(sCount2.GetComponent<TextMeshPro>().text);
+                    totalCount2.GetComponent<TextMeshPro>().text = total2.ToString();
+
+                }
+                if (card.name == "Niebla")
+                {
+                    int attackRange1 = 0;
+                    int attackRange2 = 0;
+                    int count1 = 0;
+                    int count2 = 0;
+                    foreach (GameObject rangeCard in rangeSection1.GetComponent<RealDeck>().Real_Cards)
+                    {
+                        if (rangeCard.GetComponent<PreF_UnitCard>().unit_Card.LType == Level_type.Golden)
+                        {
+                            attackRange1 += rangeCard.GetComponent<PreF_UnitCard>().unit_Card.Power;
+                        }
+                        else
+                        {
+                            count1++;
+                        }
+                    }
+                    attackRange1 += count1;
+                    rCount1.GetComponent<TextMeshPro>().text = attackRange1.ToString();
+                    int total1 = int.Parse(mCount1.GetComponent<TextMeshPro>().text) + int.Parse(rCount1.GetComponent<TextMeshPro>().text) + int.Parse(sCount1.GetComponent<TextMeshPro>().text);
+                    totalCount1.GetComponent<TextMeshPro>().text = total1.ToString();
+
+                    foreach (GameObject rangeCard in rangeSection2.GetComponent<RealDeck>().Real_Cards)
+                    {
+                        if (rangeCard.GetComponent<PreF_UnitCard>().unit_Card.LType == Level_type.Golden)
+                        {
+                            attackRange2 += rangeCard.GetComponent<PreF_UnitCard>().unit_Card.Power;
+                        }
+                        else
+                        {
+                            count2++;
+                        }
+                    }
+                    attackRange2 += count2;
+                    rCount2.GetComponent<TextMeshPro>().text = attackRange2.ToString();
+                    int total2 = int.Parse(mCount2.GetComponent<TextMeshPro>().text) + int.Parse(rCount2.GetComponent<TextMeshPro>().text) + int.Parse(sCount2.GetComponent<TextMeshPro>().text);
+                    totalCount2.GetComponent<TextMeshPro>().text = total2.ToString();
+                }
+                if (card.name == "Lluvia")
+                {
+                    int attackSiege1 = 0;
+                    int attackSiege2 = 0;
+                    int count1 = 0;
+                    int count2 = 0;
+                    foreach (GameObject siegeCard in siegeSection1.GetComponent<RealDeck>().Real_Cards)
+                    {
+                        if (siegeCard.GetComponent<PreF_UnitCard>().unit_Card.LType == Level_type.Golden)
+                        {
+                            attackSiege1 += siegeCard.GetComponent<PreF_UnitCard>().unit_Card.Power;
+                        }
+                        else
+                        {
+                            count1++;
+                        }
+                    }
+                    attackSiege1 += count1;
+                    sCount1.GetComponent<TextMeshPro>().text = attackSiege1.ToString();
+                    int total1 = int.Parse(mCount1.GetComponent<TextMeshPro>().text) + int.Parse(rCount1.GetComponent<TextMeshPro>().text) + int.Parse(sCount1.GetComponent<TextMeshPro>().text);
+                    totalCount1.GetComponent<TextMeshPro>().text = total1.ToString();
+
+                    foreach (GameObject siegeCard in siegeSection2.GetComponent<RealDeck>().Real_Cards)
+                    {
+                        if (siegeCard.GetComponent<PreF_UnitCard>().unit_Card.LType == Level_type.Golden)
+                        {
+                            attackSiege2 += siegeCard.GetComponent<PreF_UnitCard>().unit_Card.Power;
+                        }
+                        else
+                        {
+                            count2++;
+                        }
+                    }
+                    attackSiege2 += count2;
+                    sCount2.GetComponent<TextMeshPro>().text = attackSiege2.ToString();
+                    int total2 = int.Parse(mCount2.GetComponent<TextMeshPro>().text) + int.Parse(rCount2.GetComponent<TextMeshPro>().text) + int.Parse(sCount2.GetComponent<TextMeshPro>().text);
+                    totalCount2.GetComponent<TextMeshPro>().text = total2.ToString();
+                }
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void Update()
     {
-
+       
 
         ///////////////////////////////////////////////////////////////////////////////////////
         foreach (GameObject card in siegeSection1.GetComponent<RealDeck>().Real_Cards)
@@ -246,6 +403,8 @@ public class GameManager : MonoBehaviour
         {
             HornEffect(sBuffSection2, sCount2);
         }
+        /////////////////////////////////////////////////////////////////////////////////////////
+        WheatherEffect();
         /////////////////////////////////////////////////////////////////////////////////////////
 
 

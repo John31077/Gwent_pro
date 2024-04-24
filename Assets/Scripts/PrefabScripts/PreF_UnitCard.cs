@@ -6,4 +6,5 @@ using UnityEngine.UI;
 public class PreF_UnitCard : MonoBehaviour
 {
     public Unit_card unit_Card;
+    public int powerAttack;
 }

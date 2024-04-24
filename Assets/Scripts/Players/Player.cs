@@ -9,4 +9,5 @@ public class Player : MonoBehaviour
     public bool leaderEffect; //Si es false, el lider no ha activado su efecto.
     public bool hasPassTurn;
     public bool hasPlayed;
+    public bool SeñueloActivate;
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class InstantiatePrefabs : MonoBehaviour
@@ -26,6 +27,10 @@ public class InstantiatePrefabs : MonoBehaviour
                 spriteRenderer.sprite = card.Image;
                 PreF_UnitCard preF_UnitCard = InstUnitCardPrefab.GetComponent<PreF_UnitCard>();
                 preF_UnitCard.unit_Card = (Unit_card)card;
+
+                preF_UnitCard.powerAttack = preF_UnitCard.unit_Card.Power;
+
+
                 CardsGameObject.Real_Cards.Add(InstUnitCardPrefab);
                 InstUnitCardPrefab.transform.SetParent(CardsGameObject.transform);
             }

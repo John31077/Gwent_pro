@@ -28,7 +28,7 @@ public class CountManager : MonoBehaviour
             int attack = 0;
             foreach (GameObject card in meleeSection1.Real_Cards)
             {
-                attack += card.GetComponent<PreF_UnitCard>().unit_Card.Power;
+                attack += card.GetComponent<PreF_UnitCard>().powerAttack;
                 meleeCount1.GetComponent<TextMeshPro>().text = attack.ToString();
             }
         }
@@ -38,7 +38,7 @@ public class CountManager : MonoBehaviour
             int attack = 0;
             foreach (GameObject card in rangeSection1.Real_Cards)
             {
-                attack += card.GetComponent<PreF_UnitCard>().unit_Card.Power;
+                attack += card.GetComponent<PreF_UnitCard>().powerAttack;
                 rangeCount1.GetComponent<TextMeshPro>().text = attack.ToString();
             }
         }
@@ -48,7 +48,7 @@ public class CountManager : MonoBehaviour
             int attack = 0;
             foreach (GameObject card in siegeSection1.Real_Cards)
             {
-                attack += card.GetComponent<PreF_UnitCard>().unit_Card.Power;
+                attack += card.GetComponent<PreF_UnitCard>().powerAttack;
                 siegeCount1.GetComponent<TextMeshPro>().text = attack.ToString();
             }
         }
@@ -61,7 +61,7 @@ public class CountManager : MonoBehaviour
             int attack = 0;
             foreach (GameObject card in meleeSection2.Real_Cards)
             {
-                attack += card.GetComponent<PreF_UnitCard>().unit_Card.Power;
+                attack += card.GetComponent<PreF_UnitCard>().powerAttack;
                 meleeCount2.GetComponent<TextMeshPro>().text = attack.ToString();
             }
         }
@@ -71,7 +71,7 @@ public class CountManager : MonoBehaviour
             int attack = 0;
             foreach (GameObject card in rangeSection2.Real_Cards)
             {
-                attack += card.GetComponent<PreF_UnitCard>().unit_Card.Power;
+                attack += card.GetComponent<PreF_UnitCard>().powerAttack;
                 rangeCount2.GetComponent<TextMeshPro>().text = attack.ToString();
             }
         }
@@ -81,7 +81,7 @@ public class CountManager : MonoBehaviour
             int attack = 0;
             foreach (GameObject card in siegeSection2.Real_Cards)
             {
-                attack += card.GetComponent<PreF_UnitCard>().unit_Card.Power;
+                attack += card.GetComponent<PreF_UnitCard>().powerAttack;
                 siegeCount2.GetComponent<TextMeshPro>().text = attack.ToString();
             }
         }

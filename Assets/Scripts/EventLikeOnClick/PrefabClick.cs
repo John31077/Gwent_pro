@@ -8,12 +8,56 @@ using UnityEngine;
 public class PrefabClick : MonoBehaviour
 {
     public static GameObject cardGameObject; 
+    public GameObject P1ChangeCard;
+    public static int p1ChangeCardCount = 0;
+    public static int p2ChangeCardCount = 0;
     public static bool boolForHorn; //Solamente hace falta para que funcione bien el cambio de turno cuando se usa "Cuerno de Guerra"
     private void OnMouseDown()
     {
         cardGameObject = this.gameObject; //Se define la instancia especifica del prefab que contiene el botón.
-        if (cardGameObject.GetComponent<PreF_UnitCard>() != null) //Entra si el prefab es una carta de unidad.
+
+    
+        if (GameManager.arranque == false)
         {
+            if (cardGameObject.transform.IsChildOf(GameObject.Find("Player1").transform))
+            {
+                if (p1ChangeCardCount < 2)
+                {
+                    //Aplica el metodo
+                    AddToList.SwitchCard(cardGameObject);
+                    p1ChangeCardCount++;
+                }
+            }
+            if (cardGameObject.transform.IsChildOf(GameObject.Find("Player2").transform))
+            {
+                if (p2ChangeCardCount < 2)
+                {
+                    //Aplica el metodo
+                    AddToList.SwitchCard(cardGameObject);
+                    p2ChangeCardCount++;
+                }
+            }
+        }
+
+
+
+
+
+
+
+        else if (cardGameObject.GetComponent<PreF_UnitCard>() != null) //Entra si el prefab es una carta de unidad.
+        {
+            if (cardGameObject.GetComponent<PreF_UnitCard>().unit_Card.AType == Attack_type.Señuelo) //Entra si es Señuelo
+            {   
+                if (cardGameObject.transform.IsChildOf(GameObject.Find("Player1").transform))
+                {
+                    AddToList.SeñueloEffect(cardGameObject, GameObject.Find("Player1"));
+                }
+                else if (cardGameObject.transform.IsChildOf(GameObject.Find("Player2").transform))
+                {
+                    AddToList.SeñueloEffect(cardGameObject, GameObject.Find("Player2"));
+                }
+            }
             if (cardGameObject.GetComponent<PreF_UnitCard>().unit_Card.AType == Attack_type.Melee)//Entra si es de melee
             {
                 if (cardGameObject.transform.IsChildOf(GameObject.Find("Player1").transform)) //Entra si el prefab es del jugador 1.
@@ -21,6 +65,7 @@ public class PrefabClick : MonoBehaviour
                     RealDeck hand1 =  GameObject.Find("Hand1").GetComponent<RealDeck>(); //Esto es la lista de Hand1
                     RealDeck melee1 = GameObject.Find("MeleeSection1").GetComponent<RealDeck>(); //Esto es la lista de MeleeSection1
                     AddToList.AddToMelee(cardGameObject, melee1, hand1); //Llama al metodo para posicionar cartas en melee.
+                    
                 }    
                 else if (cardGameObject.transform.IsChildOf(GameObject.Find("Player2").transform))  //Entra si el prefab es del jugador 2.
                 {
@@ -74,11 +119,34 @@ public class PrefabClick : MonoBehaviour
                     {
                         AddToList.SunnyEffect();
                         GameObject.Find("Player1").GetComponent<Player>().leaderEffect = true;
-                        GameObject.Find("Player1").GetComponent<Player>().leaderEffect = true;
                         GameManager.playerTurn = !GameManager.playerTurn;
-                        Debug.Log(GameManager.playerTurn);
                     }
 
+                }
+                else if ((cardGameObject.GetComponent<LeaderSection>().leader.Tittle == "Tito Mede II" || cardGameObject.GetComponent<LeaderSection>().leader.Tittle == "Sheogorath")&& GameObject.Find("Player1").GetComponent<Player>().leaderEffect == false)
+                {
+                    AddToList.AddOneCardEffect(cardGameObject);
+                    GameObject.Find("Player1").GetComponent<Player>().leaderEffect = true;
+                    GameManager.playerTurn = !GameManager.playerTurn;
+
+                }
+                else if (cardGameObject.GetComponent<LeaderSection>().leader.Tittle == "Molag Bal" && GameObject.Find("Player1").GetComponent<Player>().leaderEffect == false)
+                {
+                    AddToList.LittleBurn(cardGameObject);
+                    GameObject.Find("Player1").GetComponent<Player>().leaderEffect = true;
+                    GameManager.playerTurn = !GameManager.playerTurn;
+                }
+                else if (cardGameObject.GetComponent<LeaderSection>().leader.Tittle == "Mehrunes Dagon" && GameObject.Find("Player1").GetComponent<Player>().leaderEffect == false)
+                {
+                    AddToList.ClearSectionWithMinTroops();
+                    GameObject.Find("Player1").GetComponent<Player>().leaderEffect = true;
+                    GameManager.playerTurn = !GameManager.playerTurn;
+                }
+                 else if (cardGameObject.GetComponent<LeaderSection>().leader.Tittle == "Tiber Septim" && GameObject.Find("Player1").GetComponent<Player>().leaderEffect == false)
+                {
+                    AddToList.Burn();
+                    GameObject.Find("Player1").GetComponent<Player>().leaderEffect = true;
+                    GameManager.playerTurn = !GameManager.playerTurn;
                 }
             }
             if (cardGameObject.transform.IsChildOf(GameObject.Find("Player2").transform))
@@ -94,13 +162,40 @@ public class PrefabClick : MonoBehaviour
                     {
                         AddToList.SunnyEffect();
                         GameObject.Find("Player2").GetComponent<Player>().leaderEffect = true;
-                        GameObject.Find("Player2").GetComponent<Player>().leaderEffect = true;
                         GameManager.playerTurn = !GameManager.playerTurn;
-                        Debug.Log(GameManager.playerTurn);
                         
                     }
                 }
+                else if ((cardGameObject.GetComponent<LeaderSection>().leader.Tittle == "Tito Mede II" || cardGameObject.GetComponent<LeaderSection>().leader.Tittle == "Sheogorath") && GameObject.Find("Player2").GetComponent<Player>().leaderEffect == false)
+                {
+                    AddToList.AddOneCardEffect(cardGameObject);
+                    GameObject.Find("Player2").GetComponent<Player>().leaderEffect = true;
+                    GameManager.playerTurn = !GameManager.playerTurn;
+
+                }
+                else if (cardGameObject.GetComponent<LeaderSection>().leader.Tittle == "Molag Bal" && GameObject.Find("Player2").GetComponent<Player>().leaderEffect == false)
+                {
+                    AddToList.LittleBurn(cardGameObject);
+                    GameObject.Find("Player2").GetComponent<Player>().leaderEffect = true;
+                    GameManager.playerTurn = !GameManager.playerTurn;
+                }
+                else if (cardGameObject.GetComponent<LeaderSection>().leader.Tittle == "Mehrunes Dagon" && GameObject.Find("Player2").GetComponent<Player>().leaderEffect == false)
+                {
+                    AddToList.ClearSectionWithMinTroops();
+                    GameObject.Find("Player1").GetComponent<Player>().leaderEffect = true;
+                    GameManager.playerTurn = !GameManager.playerTurn;
+                }
+                else if (cardGameObject.GetComponent<LeaderSection>().leader.Tittle == "Tiber Septim" && GameObject.Find("Player2").GetComponent<Player>().leaderEffect == false)
+                {
+                    AddToList.Burn();
+                    GameObject.Find("Player1").GetComponent<Player>().leaderEffect = true;
+                    GameManager.playerTurn = !GameManager.playerTurn;
+                }
             }
+            
+
+
+
         }
         else if (cardGameObject.GetComponent<Pref_HornOrFireCard>() != null) //Entra si el prefab es una carta de Cuerno o Fuego
         {

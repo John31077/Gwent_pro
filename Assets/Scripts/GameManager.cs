@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using TMPro;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
@@ -8,6 +9,9 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public static bool arranque = false;
+
+
     public static bool playerTurn; //Si es false, es turno del jugador 1 y si es true es turno del jugador 2.(El jugador 1 siempre comienza)
     public GameObject player1;
     public GameObject totalCount1;
@@ -48,6 +52,11 @@ public class GameManager : MonoBehaviour
 
     public GameObject weatherSection;
 
+
+    public GameObject victoryScreen;
+    public GameObject message1;
+    public GameObject message2;
+    public GameObject message3;
     
     public void MyUpdate()
     {
@@ -70,9 +79,9 @@ public class GameManager : MonoBehaviour
             {
                 if (card.GetComponent<PreF_UnitCard>().unit_Card.LType == Level_type.Golden)
                 {
-                    sectionAttack += card.GetComponent<PreF_UnitCard>().unit_Card.Power;
+                    sectionAttack += card.GetComponent<PreF_UnitCard>().powerAttack;
                 }
-                else sectionAttack += 2 * card.GetComponent<PreF_UnitCard>().unit_Card.Power;
+                else sectionAttack += 2 * card.GetComponent<PreF_UnitCard>().powerAttack;
             }
             sectionCount.GetComponent<TextMeshPro>().text = sectionAttack.ToString();
             int total = int.Parse(mCount1.GetComponent<TextMeshPro>().text) + int.Parse(rCount1.GetComponent<TextMeshPro>().text) + int.Parse(sCount1.GetComponent<TextMeshPro>().text);
@@ -85,9 +94,9 @@ public class GameManager : MonoBehaviour
             {
                 if (card.GetComponent<PreF_UnitCard>().unit_Card.LType == Level_type.Golden)
                 {
-                    sectionAttack += card.GetComponent<PreF_UnitCard>().unit_Card.Power;
+                    sectionAttack += card.GetComponent<PreF_UnitCard>().powerAttack;
                 }
-                else sectionAttack += 2 * card.GetComponent<PreF_UnitCard>().unit_Card.Power;
+                else sectionAttack += 2 * card.GetComponent<PreF_UnitCard>().powerAttack;
             }
             sectionCount.GetComponent<TextMeshPro>().text = sectionAttack.ToString();
             int total = int.Parse(mCount1.GetComponent<TextMeshPro>().text) + int.Parse(rCount1.GetComponent<TextMeshPro>().text) + int.Parse(sCount1.GetComponent<TextMeshPro>().text);
@@ -101,9 +110,9 @@ public class GameManager : MonoBehaviour
             {
                 if (card.GetComponent<PreF_UnitCard>().unit_Card.LType == Level_type.Golden)
                 {
-                    sectionAttack += card.GetComponent<PreF_UnitCard>().unit_Card.Power;
+                    sectionAttack += card.GetComponent<PreF_UnitCard>().powerAttack;
                 }
-                else sectionAttack += 2 * card.GetComponent<PreF_UnitCard>().unit_Card.Power;
+                else sectionAttack += 2 * card.GetComponent<PreF_UnitCard>().powerAttack;
             }
             sectionCount.GetComponent<TextMeshPro>().text = sectionAttack.ToString();
             int total = int.Parse(mCount1.GetComponent<TextMeshPro>().text) + int.Parse(rCount1.GetComponent<TextMeshPro>().text) + int.Parse(sCount1.GetComponent<TextMeshPro>().text);
@@ -116,9 +125,9 @@ public class GameManager : MonoBehaviour
             {
                 if (card.GetComponent<PreF_UnitCard>().unit_Card.LType == Level_type.Golden)
                 {
-                    sectionAttack += card.GetComponent<PreF_UnitCard>().unit_Card.Power;
+                    sectionAttack += card.GetComponent<PreF_UnitCard>().powerAttack;
                 }
-                else sectionAttack += 2 * card.GetComponent<PreF_UnitCard>().unit_Card.Power;
+                else sectionAttack += 2 * card.GetComponent<PreF_UnitCard>().powerAttack;
             }
             sectionCount.GetComponent<TextMeshPro>().text = sectionAttack.ToString();
             int total = int.Parse(mCount2.GetComponent<TextMeshPro>().text) + int.Parse(rCount2.GetComponent<TextMeshPro>().text) + int.Parse(sCount2.GetComponent<TextMeshPro>().text);
@@ -131,9 +140,9 @@ public class GameManager : MonoBehaviour
             {
                 if (card.GetComponent<PreF_UnitCard>().unit_Card.LType == Level_type.Golden)
                 {
-                    sectionAttack += card.GetComponent<PreF_UnitCard>().unit_Card.Power;
+                    sectionAttack += card.GetComponent<PreF_UnitCard>().powerAttack;
                 }
-                else sectionAttack += 2 * card.GetComponent<PreF_UnitCard>().unit_Card.Power;
+                else sectionAttack += 2 * card.GetComponent<PreF_UnitCard>().powerAttack;
             }
             sectionCount.GetComponent<TextMeshPro>().text = sectionAttack.ToString();
             int total = int.Parse(mCount2.GetComponent<TextMeshPro>().text) + int.Parse(rCount2.GetComponent<TextMeshPro>().text) + int.Parse(sCount2.GetComponent<TextMeshPro>().text);
@@ -146,9 +155,9 @@ public class GameManager : MonoBehaviour
             {
                 if (card.GetComponent<PreF_UnitCard>().unit_Card.LType == Level_type.Golden)
                 {
-                    sectionAttack += card.GetComponent<PreF_UnitCard>().unit_Card.Power;
+                    sectionAttack += card.GetComponent<PreF_UnitCard>().powerAttack;
                 }
-                else sectionAttack += 2 * card.GetComponent<PreF_UnitCard>().unit_Card.Power;
+                else sectionAttack += 2 * card.GetComponent<PreF_UnitCard>().powerAttack;
             }
             sectionCount.GetComponent<TextMeshPro>().text = sectionAttack.ToString();
             int total = int.Parse(mCount2.GetComponent<TextMeshPro>().text) + int.Parse(rCount2.GetComponent<TextMeshPro>().text) + int.Parse(sCount2.GetComponent<TextMeshPro>().text);
@@ -172,7 +181,7 @@ public class GameManager : MonoBehaviour
                     {
                         if (meleeCard.GetComponent<PreF_UnitCard>().unit_Card.LType == Level_type.Golden)
                         {
-                            attackMelee1 += meleeCard.GetComponent<PreF_UnitCard>().unit_Card.Power;
+                            attackMelee1 += meleeCard.GetComponent<PreF_UnitCard>().powerAttack;
                         }
                         else
                         {
@@ -188,7 +197,7 @@ public class GameManager : MonoBehaviour
                     {
                         if (meleeCard.GetComponent<PreF_UnitCard>().unit_Card.LType == Level_type.Golden)
                         {
-                            attackMelee2 += meleeCard.GetComponent<PreF_UnitCard>().unit_Card.Power;
+                            attackMelee2 += meleeCard.GetComponent<PreF_UnitCard>().powerAttack;
                         }
                         else
                         {
@@ -211,7 +220,7 @@ public class GameManager : MonoBehaviour
                     {
                         if (rangeCard.GetComponent<PreF_UnitCard>().unit_Card.LType == Level_type.Golden)
                         {
-                            attackRange1 += rangeCard.GetComponent<PreF_UnitCard>().unit_Card.Power;
+                            attackRange1 += rangeCard.GetComponent<PreF_UnitCard>().powerAttack;
                         }
                         else
                         {
@@ -227,7 +236,7 @@ public class GameManager : MonoBehaviour
                     {
                         if (rangeCard.GetComponent<PreF_UnitCard>().unit_Card.LType == Level_type.Golden)
                         {
-                            attackRange2 += rangeCard.GetComponent<PreF_UnitCard>().unit_Card.Power;
+                            attackRange2 += rangeCard.GetComponent<PreF_UnitCard>().powerAttack;
                         }
                         else
                         {
@@ -249,7 +258,7 @@ public class GameManager : MonoBehaviour
                     {
                         if (siegeCard.GetComponent<PreF_UnitCard>().unit_Card.LType == Level_type.Golden)
                         {
-                            attackSiege1 += siegeCard.GetComponent<PreF_UnitCard>().unit_Card.Power;
+                            attackSiege1 += siegeCard.GetComponent<PreF_UnitCard>().powerAttack;
                         }
                         else
                         {
@@ -265,7 +274,7 @@ public class GameManager : MonoBehaviour
                     {
                         if (siegeCard.GetComponent<PreF_UnitCard>().unit_Card.LType == Level_type.Golden)
                         {
-                            attackSiege2 += siegeCard.GetComponent<PreF_UnitCard>().unit_Card.Power;
+                            attackSiege2 += siegeCard.GetComponent<PreF_UnitCard>().powerAttack;
                         }
                         else
                         {
@@ -312,6 +321,20 @@ public class GameManager : MonoBehaviour
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void Update()
     {
+        if (arranque == false)
+        {
+            return;
+        }
+        else if (player1.GetComponent<Player>().SeñueloActivate)
+        {
+            return;
+        }
+        else if (player2.GetComponent<Player>().SeñueloActivate)
+        {
+            return;
+        }
+        else
+        {
        
 
         ///////////////////////////////////////////////////////////////////////////////////////
@@ -403,10 +426,15 @@ public class GameManager : MonoBehaviour
         {
             HornEffect(sBuffSection2, sCount2);
         }
+
+        
+
+
+
+
         /////////////////////////////////////////////////////////////////////////////////////////
         WheatherEffect();
         /////////////////////////////////////////////////////////////////////////////////////////
-
 
 
 
@@ -418,16 +446,22 @@ public class GameManager : MonoBehaviour
         {
             ColliderEditor.StaticDisableAllColliders();
             Debug.Log("Empate");
+            victoryScreen.SetActive(true);
+            message3.SetActive(true);
         }
         else if (player1.GetComponent<Player>().life2 == false && player2.GetComponent<Player>().life2)
         {
             ColliderEditor.StaticDisableAllColliders();
             Debug.Log("Ganó el jugador 2");
+            victoryScreen.SetActive(true);
+            message2.SetActive(true);
         }
         else if (player1.GetComponent<Player>().life2 && player2.GetComponent<Player>().life2 == false)
         {
             ColliderEditor.StaticDisableAllColliders();
             Debug.Log("Ganó el jugador 1");
+            victoryScreen.SetActive(true);
+            message1.SetActive(true);
         }
 
 
@@ -563,4 +597,9 @@ public class GameManager : MonoBehaviour
         
     }
 
+
+
+
+
+    }//el else gigante
 }

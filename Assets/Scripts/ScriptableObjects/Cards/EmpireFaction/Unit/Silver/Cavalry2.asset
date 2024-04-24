@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 6d37c67137f2e7f4fa06608cf1cff911, type: 3}
   Tittle: "Caballer\xEDa2"
-  Effect_description: Esta carta no tiene efectos
+  Effect_description: Limpia la fila del campo con menos cartas.
   Faction: 0
-  Efect: 0
+  Efect: 7
   Power: 3
   AType: 0
   LType: 0

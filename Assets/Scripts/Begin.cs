@@ -48,6 +48,9 @@ public class Begin : MonoBehaviour
     public LeaderCard bal_LC;
 
 
+    public GameObject P1ChangeCard;
+    public GameObject P2ChangeCard;
+
     public void AplyDeckOblivionP1()
     {
         destinationP1.DeckSO.Clear();
@@ -253,4 +256,8 @@ public class Begin : MonoBehaviour
         
     }
 
+    public void UltimateContinue()
+    {
+        GameManager.arranque = true;
+    }
 }
